@@ -38,14 +38,14 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
             bindings = <
-&kp ESC   &kp F2 &kp F3   &kp F4   &kp F5    &kp F6                           &kp F6    &kp HOME  &kp C_PP  &kp END  &kp F0   &none
+&kp ESC   &kp F2 &kp F3   &kp F4   &kp F5    &kp F6                           &kp F6    &kp HOME  &kp C_PP  &kp END  &kp F11  &kp DEL
 &kp TAB   &kp Q  &kp W    &kp F    &kp P     &kp G                            &kp J     &kp L     &kp U     &kp Y    &kp SEMI &kp BSPC
 &kp LSHFT &kp A  &kp R    &kp S    &kp T     &kp D                            &kp H     &kp N     &kp E     &kp I    &kp O    &kp RCTRL
-&kp SPACE &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &kp C_MUTE &kp K     &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RET
+&kp SPACE &kp Z  &kp X    &kp C    &kp V     &kp B    &kp C_MUTE   &kp C_MUTE &kp K     &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RET
                  &kp LGUI &kp LALT &kp NUM   &mo NAV  &kp LCTRL    &kp SPACE  &mo RSHFT &kp NUM   &kp RALT  &kp LOWER
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         nav_layer {
