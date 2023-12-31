@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // for a localized keymap from github.com/joelspadin/zmk-locale-generator v1.3.2
-#include keys_cs.h
+#include "keys_cs.h"
 
 #define BASE 0
 #define NAV 1
