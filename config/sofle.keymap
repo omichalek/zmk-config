@@ -40,46 +40,42 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "default";
-// ------------------------------------------                   -----------------------------------------------
-// |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-//               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
+            display-name = "base";
+// ------------------------------------------        BASE      -----------------------------------------------
+
             bindings = <
-&kp ESC   &kp F2 &kp F3   &kp F4   &kp F5    &kp F6                           &kp F6    &kp HOME  &kp C_PP  &kp END  &kp F11  &kp DEL
-&kp TAB   &kp Q  &kp W    &kp F    &kp P     &kp G                            &kp J     &kp L     &kp U     &kp Y    &kp SEMI &kp BSPC
-&kp LSHFT &kp A  &kp R    &kp S    &kp T     &kp D                            &kp H     &kp N     &kp E     &kp I    &kp O    &kp RCTRL
-&kp SPACE &kp Z  &kp X    &kp C    &kp V     &kp B    &kp C_MUTE   &kp C_MUTE &kp K     &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RET
-                 &kp LGUI &kp LALT &mo NUM   &mo NAV  &kp LCTRL    &kp RSHFT  &kp SPACE &mo NUM   &kp RALT  &kp RGUI
+&kp ESC   &kp F2    &kp F3  &kp F4   &kp F5    &kp F6                         &kp PSCRN    &kp HOME  &kp C_PP   &kp END     &kp F11     &kp DEL
+&kp TAB   &kp Q     &kp W   &kp F    &kp P     &kp G                          &kp J        &kp L     &kp U      &kp CS_Y    &kp SEMI    &kp BSPC
+&kp LSHFT &kp A     &kp R   &kp S    &kp T     &kp D                          &kp H        &kp N     &kp E      &kp I       &kp O       &kp RCTRL
+&kp SPACE &kp CS_Z  &kp X   &kp C    &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &kp CS_QMARK &kp M     &kp K     &kp CS_COMMA &kp CS_DOT  &kp RET
+                 &kp LGUI   &kp LALT  &mo NAV  &mo NUM  &kp LCTRL  &kp RSHFT  &mo NAV   &mo NUM      &kp RALT   &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         nav_layer {
-            display-name = "nav";
+            display-name = "nav-num";
 // TODO: Some binds are waiting for shifted keycode support.
-// ------------------------------------------        NAV       -----------------------------------------------
+// ------------------------------------------        NAV / NUM      -----------------------------------------------
 
             bindings = <
-&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                     &kp F6    &kp F7   &kp F8          &kp F9    &kp F10   &kp F11
-&trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                   &kp N6    &kp N7   &kp N8          &kp N9    &kp N0    &kp F12
-&trans    &kp TILDE &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN                   &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp PIPE
-&trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp END    &trans   &trans  &kp LBKT  &kp RBKT &kp SEMI        &kp COLON &kp BSLH  &trans
-                    &trans    &trans    &trans    &trans     &trans   &trans  &trans    &trans   &trans          &trans
+&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                     &kp F6          &kp F7     &kp F8     &kp F9     &kp F10     &kp F11
+&trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                   &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS    &trans
+&trans    &kp TILDE &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN                   &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &trans
+&trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp END    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_EQUAL  &trans
+                    &trans    &trans    &trans    &trans     &trans   &trans  &trans          &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         num_layer {
-            display-name = "num";
-// ----------------------------------------------      NUM      ----------------------------------------------
+            display-name = "num-nav";
+// ----------------------------------------------      NUM / NAV      ----------------------------------------------
 
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                   &trans    &trans    &trans   &trans    &trans  &trans
+&kp GRAVE  &kp N1          &kp N2      &kp N3      &kp N4       &kp N5                        &kp N6    &kp N7    &kp N8   &kp N9    &kp N0  &trans
 &trans     &kp KP_MULTIPLY &kp KP_N7   &kp KP_N8   &kp KP_N9    &kp KP_PLUS                   &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
 &trans     &kp KP_DIVIDE   &kp KP_N4   &kp KP_N5   &kp KP_N6    &kp KP_MINUS                  &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
 &trans     &kp KP_N0       &kp KP_N1   &kp KP_N2   &kp KP_N3    &kp KP_EQUAL  &trans  &trans  &trans    &trans    &trans   &trans    &trans  &trans
