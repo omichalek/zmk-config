@@ -51,7 +51,7 @@
                  &kp LGUI   &kp LALT  &mo NAV  &mo NUM  &kp LCTRL  &kp RSHFT  &mo NAV   &mo NUM      &kp RALT   &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         nav_layer {
@@ -60,10 +60,10 @@
 // ------------------------------------------        NAV / NUM      -----------------------------------------------
 
             bindings = <
-&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                     &kp F6          &kp F7     &kp F8     &kp F9     &kp F10     &kp F11
+&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                     &kp F7          &kp F8     &kp F9     &kp F10     &kp F11     &kp F12
 &trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                   &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS    &trans
-&trans    &kp TILDE &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN                   &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &trans
-&trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp END    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_EQUAL  &trans
+&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                   &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &trans
+&trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_EQUAL  &trans
                     &trans    &trans    &trans    &trans     &trans   &trans  &trans          &trans     &trans     &trans
             >;
 
