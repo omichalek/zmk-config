@@ -108,7 +108,13 @@
     };
 };
 
-ZMK_COMBO(bracket-std-l, &kp CS_LBKT, RM2 RM3, ALL, 25)
-ZMK_COMBO(bracket-std-r, &kp CS_RBKT, RM3 RM4, ALL, 25)
+
+//  () ?
+ZMK_COMBO(bracket-sq-l, &kp CS_LBRC, RM0 RM1, ALL, 25)
+ZMK_COMBO(bracket-sq-r, &kp CS_RBRC, RM1 RM2, ALL, 25)
+
+//  []
+ZMK_COMBO(bracket-sq-l, &kp CS_LBKT, RM2 RM3, ALL, 25)
+ZMK_COMBO(bracket-sq-r, &kp CS_RBKT, RM3 RM4, ALL, 25)
 
 
