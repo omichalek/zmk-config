@@ -50,8 +50,8 @@
 &kp ESC   &kp F2    &kp F3  &kp F4   &kp F5    &kp F6                         &kp PSCRN    &kp HOME  &kp C_PP   &kp END     &kp F11     &kp DEL
 &kp TAB   &kp Q     &kp W   &kp F    &kp P     &kp G                          &kp J        &kp L     &kp U      &kp CS_Y    &kp SEMI    &kp BSPC
 &kp LSHFT &kp A     &kp R   &kp S    &kp T     &kp D                          &kp H        &kp N     &kp E      &kp I       &kp O       &kp RCTRL
-&kp SPACE &kp CS_Z  &kp X   &kp C    &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &kp CS_QMARK &kp M     &kp K     &kp CS_COMMA &kp CS_DOT  &kp RET
-                 &kp LGUI   &kp LALT  &mo NUM  &mo NAV  &kp LCTRL  &kp RSHFT  &mo NUM   &mo NAV      &kp RALT   &kp RGUI
+&kp SPACE &kp CS_Z  &kp X   &kp C    &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &kp CS_QMARK CS_EXCL &kp M     &kp K     &kp CS_COMMA &kp CS_DOT  &kp RET
+                 &kp LGUI   &kp RALT  &mo NUM  &mo NAV  &kp LCTRL  &kp RSHFT  &mo NUM   &mo NAV      &kp RALT   &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
