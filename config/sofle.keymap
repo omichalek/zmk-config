@@ -51,7 +51,7 @@
 &kp TAB   &kp Q     &kp W   &kp F    &kp P     &kp G                          &kp J        &kp L     &kp U      &kp CS_Y    &kp SEMI    &kp BSPC
 &kp LSHFT &kp A     &kp R   &kp S    &kp T     &kp D                          &kp H        &kp N     &kp E      &kp I       &kp O       &kp RCTRL
 &kp SPACE &kp CS_Z  &kp X   &kp C    &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &kp CS_QMARK &kp M     &kp K     &kp CS_COMMA &kp CS_DOT  &kp RET
-                 &kp LGUI   &kp LALT  &mo NAV  &mo NUM  &kp LCTRL  &kp RSHFT  &mo NAV   &mo NUM      &kp RALT   &kp RGUI
+                 &kp LGUI   &kp LALT  &mo NUM  &mo NAV  &kp LCTRL  &kp RSHFT  &mo NUM   &mo NAV      &kp RALT   &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -62,12 +62,12 @@
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------        NAV / NUM      -----------------------------------------------
 
-            bindings = <
+            bindings = <   
 &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                     &kp F7          &kp F8     &kp F9     &kp F10     &kp F11     &kp F12
-&trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                   &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS    &trans
-&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                   &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &trans
-&trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_EQUAL  &trans
-                    &trans    &trans    &trans    &trans     &trans   &trans  &trans          &trans     &trans     &trans
+&trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                   &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS  &kp K_CALC
+&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                   &kp KP_DIVIDE    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &trans
+&trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0    &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_EQUAL  &trans
+                    &trans    &trans    &trans    &trans     &trans   &trans  &trans         &kp KP_N0    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
