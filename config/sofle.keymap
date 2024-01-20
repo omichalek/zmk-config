@@ -110,12 +110,12 @@
 
 
 //  MOUSE CLICKS  left right middle
-ZMK_COMBO(mouse-l, &kp MB1, RN1 RN2, ALL, 25)
-ZMK_COMBO(mouse-r, &kp MB2, RN2 RN3, ALL, 25)
-ZMK_COMBO(mouse-m, &kp MB3, RN1 RN3, ALL, 25)
+ZMK_COMBO(mouse-l, &mkp MB1, RN1 RN2, ALL, 25)
+ZMK_COMBO(mouse-r, &mkp MB2, RN2 RN3, ALL, 25)
+ZMK_COMBO(mouse-m, &mkp MB3, RN1 RN3, ALL, 25)
 //  MOUSE CLICKS  back forward
-ZMK_COMBO(mouse-back, &kp MB4, LN3 LN2, ALL, 25)
-ZMK_COMBO(mouse-fwd,  &kp MB5, LN2 LN1, ALL, 25)
+ZMK_COMBO(mouse-back, &mkp MB4, LN3 LN2, ALL, 25)
+ZMK_COMBO(mouse-fwd,  &mkp MB5, LN2 LN1, ALL, 25)
 
 
 //  () ?
