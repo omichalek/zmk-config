@@ -80,7 +80,7 @@ ZMK_LAYER(nav-num,
 &trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0    &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_EQUAL  &trans
                     &trans    &trans    &trans    &trans     &trans   &trans  &trans         &kp KP_N0    &trans    &trans, 
 
-      &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
+&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
 )
 
 //            >;
