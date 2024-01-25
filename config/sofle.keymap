@@ -31,8 +31,6 @@
 };
 
 
-/// {
-
    // Activate ADJUST layer by pressing raise and lower
 //    conditional_layers {
 //        compatible = "zmk,conditional-layers";
@@ -42,14 +40,8 @@
 //        };
 //    };
 
-//    keymap {
-//        compatible = "zmk,keymap";
-//
-//        default_layer {
-//            display-name = "base";
-// ------------------------------------------        BASE      -----------------------------------------------
 
-//            bindings = <
+
 ZMK_LAYER(base,
 
 &kp ESC   &kp F2    &kp F3  &kp F4   &kp F5    &kp F6                         &kp PSCRN    &kp HOME  &kp C_PP   &kp END     &kp F11     &kp DEL
@@ -60,17 +52,8 @@ ZMK_LAYER(base,
 
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
-//            >;
-//
-//            sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN>;
-//        };
-//
-//        nav_layer {
-//            display-name = "nav-num";
-// TODO: Some binds are waiting for shifted keycode support.
-// ------------------------------------------        NAV / NUM      -----------------------------------------------
 
-//            bindings = <   
+
 
 ZMK_LAYER(nav-num,
 
@@ -83,15 +66,7 @@ ZMK_LAYER(nav-num,
 &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
 )
 
-//            >;
-//            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-//        };
 
-//        num_layer {
- //           display-name = "num-nav";
-// ----------------------------------------------      NUM / NAV      ----------------------------------------------
-
-//            bindings = <
 
 ZMK_LAYER(num,
 
@@ -103,20 +78,8 @@ ZMK_LAYER(num,
 
 &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
 )
-//            >;
 
-//            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-//        };
 
-//        adjust_layer {
-// ------------------------------------------------------------                  ----------------------------------------------
-// | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-// | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-// |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-// |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-//                    |         |         |         |         |         | |      |      |      |       |      |
-//            display-name = "adjust";
-//            bindings = <
 
 ZMK_LAYER(adjust,
 
@@ -129,11 +92,7 @@ ZMK_LAYER(adjust,
 &inc_dec_kp &trans &trans &inc_dec_kp &trans &trans
 )
 
-//            >;
-//        };
 
-//    };
-//};
 
 
 //  MOUSE KEY PRESS
