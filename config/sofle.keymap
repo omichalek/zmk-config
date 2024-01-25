@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: MIT
  */
 
-// for a localized keymap, comes from github.com/joelspadin/zmk-locale-generator v1.3.2
+// for a localized keymap
+// comes from github.com/joelspadin/zmk-locale-generator v1.3.2
 #include "keys_cs.h"
 
 #include <behaviors.dtsi>
@@ -25,13 +26,24 @@
 #define ADJUST 3
 
 
-// ---   EC11 Encoders   ---
+// ///   EC11 Encoders   /// //
 &sensors {
   triggers-per-rotation = <30>;
 };
 
 
-   // Activate ADJUST layer by pressing raise and lower
+
+// ///   CUSTOM KEYS   /// //
+
+
+
+
+
+// ///   LAYERS   /// //
+
+// Activate ADJUST layer by pressing raise and lower
+ZMK_CONDITIONAL_LAYER(1 2, 3)
+
 //    conditional_layers {
 //        compatible = "zmk,conditional-layers";
 //        adjust_layer {
@@ -39,7 +51,6 @@
 //            then-layer = <ADJUST>;
 //        };
 //    };
-
 
 
 ZMK_LAYER(base,
@@ -94,26 +105,28 @@ ZMK_LAYER(adjust,
 
 
 
+// ///   CUSTOM COMBOS   /// //
+
 
 //  MOUSE KEY PRESS
 //  left right middle
-ZMK_COMBO(mouse-l, &mkp MB1, RN1 RN2, ALL, 25)
-ZMK_COMBO(mouse-r, &mkp MB2, RN2 RN3, ALL, 25)
-ZMK_COMBO(mouse-m, &mkp MB3, RN1 RN3, ALL, 25)
+ZMK_COMBO(mouse-l, &mkp MB1, RN1 RN2, ALL, 50)
+ZMK_COMBO(mouse-r, &mkp MB2, RN2 RN3, ALL, 50)
+ZMK_COMBO(mouse-m, &mkp MB3, RN1 RN3, ALL, 50)
 //  back forward
-ZMK_COMBO(mouse-back, &mkp MB4, LN3 LN2, ALL, 25)
-ZMK_COMBO(mouse-fwd,  &mkp MB5, LN2 LN1, ALL, 25)
+ZMK_COMBO(mouse-back, &mkp MB4, LN3 LN2, ALL, 50)
+ZMK_COMBO(mouse-fwd,  &mkp MB5, LN2 LN1, ALL, 50)
 
 
 //  () ?
-ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RM0 RM1, ALL, 25)
-ZMK_COMBO(bracket-reg-r, &kp CS_RIGHT_PARENTHESIS, RM1 RM2, ALL, 25)
+ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RM0 RM1, ALL, 50)
+ZMK_COMBO(bracket-reg-r, &kp CS_RIGHT_PARENTHESIS, RM1 RM2, ALL, 50)
 
 //  []
-ZMK_COMBO(bracket-sq-l, &kp CS_LEFT_BRACKET, RM2 RM3, ALL, 25)
-ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RM3 RM4, ALL, 25)
+ZMK_COMBO(bracket-sq-l, &kp CS_LEFT_BRACKET, RM2 RM3, ALL, 50)
+ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RM3 RM4, ALL, 50)
 
 //  
-ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RB0 RM1, ALL, 25)
-ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RB1 RM2, ALL, 25)
+ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RB0 RM1, ALL, 50)
+ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RB1 RM2, ALL, 50)
 
