@@ -46,6 +46,16 @@
     };
 };
 
+/ {
+    behaviors {
+        my_cose: comma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+};
 
 
 // ///   LAYERS   /// //
@@ -64,11 +74,11 @@ ZMK_CONDITIONAL_LAYER(1 2, 3)
 
 ZMK_LAYER(base,
 
-&kp ESC   &kp F2    &kp F3  &kp F4   &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END     &kp F11     &kp DEL
-&kp TAB   &kp Q     &kp W   &kp F    &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y    &kp CS_MINUS  &kp BSPC
-&kp LSHFT &kp A     &kp R   &kp S    &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I       &kp O       &kp RCTRL
-&kp SPACE &kp CS_Z  &kp X   &kp C    &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K     &kp CS_COMMA &kp CS_DOT  &kp RET
-                 &kp LGUI   &kp LALT  &mo NUM  &mo NAV  &kp LCTRL  &kp RSHFT  &mo NUM   &mo NAV      &kp RALT   &kp RGUI,
+&kp ESC   &kp F2    &kp F3  &kp F4   &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11     &kp DEL
+&kp TAB   &kp Q     &kp W   &kp F    &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &kp BSPC
+&kp LSHFT &kp A     &kp R   &kp S    &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O       &kp RCTRL
+&kp SPACE &kp CS_Z  &kp X   &kp C    &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &kp RET
+                 &kp LGUI   &kp LALT  &mo NUM  &mo NAV  &kp LCTRL  &kp RSHFT  &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
 
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
