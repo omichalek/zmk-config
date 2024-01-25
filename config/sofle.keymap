@@ -128,7 +128,7 @@ ZMK_LAYER(adjust,
 
 &inc_dec_kp &trans &trans &inc_dec_kp &trans &trans
 )
-)
+
 //            >;
 //        };
 
@@ -147,15 +147,14 @@ ZMK_COMBO(mouse-fwd,  &mkp MB5, LN2 LN1, ALL, 25)
 
 
 //  () ?
-
 ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RM0 RM1, ALL, 25)
 ZMK_COMBO(bracket-reg-r, &kp CS_RIGHT_PARENTHESIS, RM1 RM2, ALL, 25)
 
-//ZMK_COMBO(bracket-reg-l, &kp CS_LBRC, RM0 RM1, ALL, 25)
-//ZMK_COMBO(bracket-reg-r, &kp CS_RBRC, RM1 RM2, ALL, 25)
-
 //  []
-ZMK_COMBO(bracket-sq-l, &kp CS_LBKT, RM2 RM3, ALL, 25)
-ZMK_COMBO(bracket-sq-r, &kp CS_RBKT, RM3 RM4, ALL, 25)
+ZMK_COMBO(bracket-sq-l, &kp CS_LEFT_BRACKET, RM2 RM3, ALL, 25)
+ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RM3 RM4, ALL, 25)
 
+//  
+ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RB0 RM1, ALL, 25)
+ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RB1 RM2, ALL, 25)
 
