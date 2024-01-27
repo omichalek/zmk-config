@@ -16,6 +16,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // All the ZMK_* commands below utilize zmk-nodefree-config:
+#define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
 #include "../zmk-nodefree-config/helper.h"
 // positional key names for Sofle:
 #include "../zmk-nodefree-config/keypos_def/keypos_60keys.h"
@@ -33,7 +34,7 @@
 
 
 
-// ///   CUSTOM KEYS   /// //
+// ///   CUSTOM CODES   /// //
 
 / {
     behaviors {
@@ -56,6 +57,23 @@
         };
     };
 };
+
+/ {
+    behaviors {
+        my_rm: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+};
+
+// //   CUSTOM: UNICODE    normal            shifted
+// quotation marks
+ZMK_UNICODE_PAIR(uc_q99,   N2, N0, N1, E,    N2, N0, N1, A)
+
+
 
 
 // ///   LAYERS   /// //
@@ -135,17 +153,23 @@ ZMK_COMBO(mouse-m, &mkp MB3, RN1 RN3, ALL, 50)
 //  back forward
 ZMK_COMBO(mouse-back, &mkp MB4, LN3 LN2, ALL, 50)
 ZMK_COMBO(mouse-fwd,  &mkp MB5, LN2 LN1, ALL, 50)
+//  context menu (right click?)
+ZMK_COMBO(menu, &kp K_CONTEXT_MENU, LN3 LN1, ALL, 50)
 
 
-//  () ?
+// quotation marks
+// „ / ‚
+ZMK_COMBO(quotation-low-99, &uc_q99, RT0 RT1, ALL, 50)
+
+
+//  ()
 ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RM0 RM1, ALL, 50)
 ZMK_COMBO(bracket-reg-r, &kp CS_RIGHT_PARENTHESIS, RM1 RM2, ALL, 50)
-
 //  []
 ZMK_COMBO(bracket-sq-l, &kp CS_LEFT_BRACKET, RM2 RM3, ALL, 50)
 ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RM3 RM4, ALL, 50)
 
-//  
+//  curly?
 ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RB0 RM1, ALL, 50)
 ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RB1 RM2, ALL, 50)
 
