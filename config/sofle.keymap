@@ -71,8 +71,12 @@
 
 // //   CUSTOM: UNICODE    normal            shifted
 // quotation marks
-ZMK_UNICODE_PAIR(uc_q99,   N2, N0, N1, E,    N2, N0, N1, A)
-
+// „ / ‚
+ZMK_UNICODE_PAIR(uc_lo99,   N2, N0, N1, E,    N2, N0, N1, A)
+// “ / ‘
+ZMK_UNICODE_PAIR(uc_hi66,   N2, N0, N1, C,    N2, N0, N1, N8)
+// ” / ’
+ZMK_UNICODE_PAIR(uc_hi99,   N2, N0, N1, D,    N2, N0, N1, N9)
 
 
 
@@ -154,12 +158,12 @@ ZMK_COMBO(mouse-m, &mkp MB3, RN1 RN3, ALL, 50)
 ZMK_COMBO(mouse-back, &mkp MB4, LN3 LN2, ALL, 50)
 ZMK_COMBO(mouse-fwd,  &mkp MB5, LN2 LN1, ALL, 50)
 //  context menu (right click?)
-ZMK_COMBO(menu, &kp K_CONTEXT_MENU, LN3 LN1, ALL, 50)
+ZMK_COMBO(menu, &kp K_CONTEXT_MENU, LM3 LM1, ALL, 50)
 
 
 // quotation marks
 // „ / ‚
-ZMK_COMBO(quotation-low-99, &uc_q99, RT0 RT1, ALL, 50)
+ZMK_COMBO(quotation-low-99, &uc_lo99, RT0 RT1, ALL, 50)
 
 
 //  ()
