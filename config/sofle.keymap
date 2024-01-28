@@ -36,6 +36,19 @@
 
 // ///   CUSTOM CODES   /// //
 
+
+behaviors {
+        holdtap: hold_tap_balanced {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+};
+
+
 / {
     behaviors {
         my_qmem: questionmark_exclamationmark {
@@ -100,7 +113,7 @@ ZMK_LAYER(base,
 &kp TAB   &kp Q     &kp W   &kp F    &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &kp BSPC
 &kp LSHFT &kp A     &kp R   &kp S    &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O       &kp RCTRL
 &kp SPACE &kp CS_Z  &kp X   &kp C    &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &kp RET
-                 &kp LGUI   &kp LALT  &mo NUM  &mo NAV  &kp LCTRL  &kp RSHFT  &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
+                 &kp LGUI   &kp LALT  &mo NUM  &mo NAV  &holdtap LCTRL ENTER &holdtap RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
 
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
