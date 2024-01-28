@@ -36,8 +36,8 @@
 
 // ///   CUSTOM CODES   /// //
 
-
-behaviors {
+/ {
+  behaviors {
         holdtap: hold_tap_balanced {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -46,29 +46,28 @@ behaviors {
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
-};
+  };
 
 
-/ {
-    behaviors {
+
+  behaviors {
         my_qmem: questionmark_exclamationmark {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CS_QMARK>, <&kp CS_EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-    };
-};
+  };
 
-/ {
-    behaviors {
+
+  behaviors {
         my_cose: comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-    };
+  };
 };
 
 / {
