@@ -34,22 +34,21 @@
 
 
 
-// ///   CUSTOM CODES   /// //
+// ///   CUSTOM KEYS   /// //
 
 / {
   behaviors {
         holdtap: hold_tap_balanced {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;    // <---[[moderate duration]]
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
   };
-
-
-
+  
+  //  CUSTOM CODES
   behaviors {
         my_qmem: questionmark_exclamationmark {
             compatible = "zmk,behavior-mod-morph";
@@ -59,7 +58,6 @@
         };
   };
 
-
   behaviors {
         my_cose: comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
@@ -68,17 +66,15 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
   };
-};
 
-/ {
-    behaviors {
+  behaviors {
         my_rm: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-    };
+  };
 };
 
 // //   CUSTOM: UNICODE    normal            shifted
