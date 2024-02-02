@@ -35,7 +35,7 @@
 
 
 
-// ///   CUSTOM KEYS   /// //
+// ///   CUSTOM   /// //
 
 / {
   behaviors {
@@ -72,7 +72,7 @@
         my_rm: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>;
+            bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
   };
