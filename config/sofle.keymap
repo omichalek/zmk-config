@@ -24,7 +24,8 @@
 #define BASE 0
 #define NAV 1
 #define NUM 2
-#define ADJUST 3
+#define MIR 3
+#define ADJUST 4
 
 
 // ///   EC11 Encoders   /// //
@@ -90,24 +91,17 @@ ZMK_UNICODE_PAIR(uc_hi99,   N2, N0, N1, D,    N2, N0, N1, N9)
 
 // ///   LAYERS   /// //
 
-// Activate ADJUST layer by pressing raise and lower
-ZMK_CONDITIONAL_LAYER(1 2, 3)
+// Activate ADJUST layer by pressing
+ZMK_CONDITIONAL_LAYER(1 2, 4)
 
-//    conditional_layers {
-//        compatible = "zmk,conditional-layers";
-//        adjust_layer {
-//            if-layers = <NAV NUM>;
-//            then-layer = <ADJUST>;
-//        };
-//    };
 
 
 ZMK_LAYER(base,
 
-&kp ESC   &kp F2    &kp F3  &kp F4   &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11     &kp DEL
-&kp TAB   &kp Q     &kp W   &kp F    &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &kp BSPC
-&kp LSHFT &kp A     &kp R   &kp S    &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O       &kp RCTRL
-&kp SPACE &kp CS_Z  &kp X   &kp C    &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &kp RET
+&kp ESC      &kp F2    &kp F3  &kp F4  &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11     &kp DEL
+&holdtap TAB MIR &kp Q  &kp W  &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &kp BSPC
+&kp LSHFT    &kp A     &kp R   &kp S   &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O       &kp RCTRL
+&kp SPACE    &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &kp RET
                  &kp LGUI   &kp LALT  &mo NUM  &mo NAV  &holdtap LCTRL ENTER &holdtap RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
 
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
@@ -137,6 +131,19 @@ ZMK_LAYER(num-nav,
                            &trans     &trans     &trans     &trans       &trans         &trans  &trans    &trans   &trans   &trans,
 
 &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp PG_UP PG_DN
+)
+
+
+
+ZMK_LAYER(mirror,
+
+&trans  &trans    &trans   &trans   &trans    &trans                       &trans    &trans  &trans   &trans   &trans   &trans
+&trans  &kp J     &kp L    &kp U    &kp CS_Y  &kp CS_MINUS                 &kp Q     &kp W   &kp F    &kp P    &kp G    &trans
+&trans  &kp H     &kp N    &kp E    &kp I     &kp O                        &kp A     &kp R   &kp S    &kp T    &kp D    &trans
+&trans  &my_qmem  &kp M    &kp K    &my_cose  &kp CS_DOT  &trans  &trans   &kp CS_Z  &kp X   &kp C    &kp V    &kp B    &trans
+                  &trans   &trans   &trans    &trans      &trans  &trans   &trans    &trans  &trans   &trans,
+
+&inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
 
 
