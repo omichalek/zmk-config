@@ -25,7 +25,7 @@
 #define NAV 1
 #define NUM 2
 #define MIR 3
-#define ADJUST 4
+#define SYSTEM 4
 
 
 // ///   EC11 Encoders   /// //
@@ -39,7 +39,7 @@
 
 / {
   behaviors {
-        holdtap: hold_tap_mod {
+        htap: hold_tap_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;    // <---[[moderate duration]]
@@ -98,11 +98,11 @@ ZMK_CONDITIONAL_LAYER(1 2, 4)
 
 ZMK_LAYER(base,
 
-&kp ESC      &kp F2    &kp F3  &kp F4  &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11     &kp DEL
-&holdtap TAB MIR &kp Q  &kp W  &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &kp BSPC
-&kp LSHFT    &kp A     &kp R   &kp S   &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O       &kp RCTRL
-&kp SPACE    &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &kp RET
-                 &kp LGUI   &kp LALT  &mo NUM  &mo NAV  &holdtap LCTRL ENTER &holdtap RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
+&kp ESC       &kp F2    &kp F3  &kp F4  &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11       &kp K_CALC
+&htap MIR TAB &kp Q     &kp W   &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &kmy_rm
+&kp LSHFT     &kp A     &kp R   &kp S   &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O         &kp RCTRL
+&kp SPACE     &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT    &kp RET
+             &kp LGUI  &kp LALT &mo NUM  &mo NAV  &htap LCTRL ENTER   &htap RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
 
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
@@ -111,11 +111,11 @@ ZMK_LAYER(base,
 
 ZMK_LAYER(nav-num,
 
-&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                     &kp F7          &kp F8     &kp F9     &kp F10     &kp F11     &kp F12
-&trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                   &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS  &kp K_CALC
-&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                   &kp KP_DIVIDE    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &trans
-&trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0    &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_EQUAL  &trans
-                    &trans    &trans    &trans    &trans     &trans   &trans  &trans         &kp KP_N0    &trans    &trans, 
+&kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                       &kp F7          &kp F8     &kp F9     &kp F10    &kp F11       &kp F12
+&trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                     &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS   &trans
+&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                       &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &trans
+&trans    &kp HOME  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_EQUAL  &trans
+                    &trans    &trans    &trans    &trans     &trans   &trans  &trans            &kp KP_N0   &trans    &trans, 
 
 &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
 )
@@ -124,11 +124,11 @@ ZMK_LAYER(nav-num,
 
 ZMK_LAYER(num-nav,
 
-&kp GRAVE  &kp N1          &kp N2     &kp N3     &kp N4     &kp N5                             &kp N6     &kp N7    &kp N8   &kp N9    &kp N0  &kp CS_ACUTE
-&trans     &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS                        &kp PG_UP  &kp BSPC  &kp UP   &kp DEL   &kp N0  &trans
-&trans     &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS                        &kp HOME  &kp LEFT  &kp DOWN &kp RIGHT &kp END &kp BSPC
-&trans     &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_DOT  &kp C_BKLT_TOG &trans  &kp PG_DN &trans   &trans   &trans    &trans  &trans
-                           &trans     &trans     &trans     &trans       &trans         &trans  &trans    &trans   &trans   &trans,
+&kp GRAVE  &kp N1          &kp N2     &kp N3     &kp N4     &kp N5                             &kp N6     &kp N7    &kp N8    &kp N9    &kp N0     &kp CS_ACUTE
+&trans     &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS                        &kp ESC    &kp BSPC  &kp UP    &kp DEL   &kp PG_UP  &trans
+&trans     &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS                       &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT &kp END    &trans
+&trans     &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_DOT  &kp C_BKLT_TOG &trans  &kp NUBS   &kp ENTER &kp SPACE &kp TAB   &kp PG_DN  &trans
+                           &trans     &trans     &trans     &trans       &trans         &trans  &trans    &trans    &trans    &trans,
 
 &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp PG_UP PG_DN
 )
@@ -148,7 +148,7 @@ ZMK_LAYER(mirror,
 
 
 
-ZMK_LAYER(adjust,
+ZMK_LAYER(system,
 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR                  &trans    &trans    &trans   &trans    &trans  &trans
 &trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                        &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
