@@ -39,51 +39,63 @@
 
 / {
   behaviors {
-        htap: hold_tap_mod {
+        hht: hold_tap_hold-pref {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            tapping-term-ms = <150>;
             quick-tap-ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp>;
+            flavor = "hold-preferred";    // hh
+            bindings = <&kp>, <&kp>;      // HOLD TAP
         };
-  };
+    
+        htt: hold_tap_tap-pref {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";   // tt
+            bindings = <&kp>, <&kp>;    // HOLD TAP
+        };
   
-  //  CUSTOM CODES
-  behaviors {
+        //  CUSTOM KEYS
+
         my_qmem: questionmark_exclamationmark {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CS_QMARK>, <&kp CS_EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-  };
 
-  behaviors {
         my_cose: comma_semicolon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-  };
 
-  behaviors {
         my_doco: dot_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CS_PERIOD>, <&kp CS_COMMA>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-  };
-  
-  behaviors {
+
         my_rm: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+    
+        //  CUSTOM F-KEYS
+        
+        my_f1: tap_dance_f1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <155>;
+            bindings = <HTT(ESC,F1)>, <LC(F1)>;
+        };
+    
   };
 };
 
@@ -111,7 +123,7 @@ ZMK_LAYER(base,
 &lt 3 TAB  &kp Q     &kp W   &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &my_rm
 &kp LSHFT  &kp A     &kp R   &kp S   &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O         &kp RCTRL
 &kp SPACE  &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT    &kp RET
-           &kp LGUI  &kp LALT &mo NUM  &mo NAV  &htap LCTRL ENTER  &htap RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
+           &kp LGUI  &kp LALT &mo NUM  &mo NAV  &hht LCTRL ENTER  &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
 
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
