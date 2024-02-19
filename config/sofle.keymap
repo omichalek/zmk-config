@@ -123,7 +123,7 @@ ZMK_LAYER(base,
 &lt 3 TAB  &kp Q     &kp W   &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &my_rm
 &kp LSHFT  &kp A     &kp R   &kp S   &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O         &kp RCTRL
 &kp SPACE  &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT    &kp RET
-           &kp LGUI  &kp LALT &mo NUM  &mo NAV  &hht LCTRL ENTER  &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
+           &kp LGUI  &kp LALT &mo NUM  &mo NAV  &kp LCTRL    &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
 
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
