@@ -89,12 +89,12 @@
     
         //  CUSTOM F-KEYS
         
-//       my_f1: tap_dance_f1 {
-//            compatible = "zmk,behavior-tap-dance";
-//            #binding-cells = <0>;
-//            tapping-term-ms = <155>;
-//            bindings = <&hht ESC F1>, <LC(F1)>;
-//        };
+       my_f1: tap_dance_f1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <155>;
+            bindings = <&hht ESC F1>, <&kp LC(F1)>;
+        };
     
   };
 };
