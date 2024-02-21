@@ -93,7 +93,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <155>;
-            bindings = <&hht ESC F1>, <&kp LC(F1)>;
+            bindings = <&hht F1 ESC>, <&kp LC(F1)>;
         };
     
   };
@@ -119,7 +119,7 @@ ZMK_CONDITIONAL_LAYER(1 2, 4)
 
 ZMK_LAYER(base,
 
-&my_f1     &kp F2    &kp F3  &kp F4  &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11       &kp K_CALC
+&htt F1 ESC &kp F2    &kp F3  &kp F4  &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11       &kp K_CALC
 &lt 3 TAB  &kp Q     &kp W   &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &my_rm
 &kp LSHFT  &kp A     &kp R   &kp S   &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O         &kp RCTRL
 &kp SPACE  &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT    &kp RET
