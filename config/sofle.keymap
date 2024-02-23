@@ -86,6 +86,14 @@
             bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        my_quo: quotation-double-single {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp CS_DOUBLE_QUOTES>, <&kp CS_SINGLE_QUOTE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     
         //  CUSTOM F-KEYS
         
@@ -200,7 +208,8 @@ ZMK_COMBO(menu, &kp K_CONTEXT_MENU, LM3 LM1, ALL, 50)
 // quotation marks
 // „ / ‚
 ZMK_COMBO(quotation-low-99, &uc_lo99, RT0 RT1, ALL, 50)
-
+// " / '
+ZMK_COMBO(quotation-std, &my_quo, RT3 RT4, ALL, 50)
 
 //  ()
 ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RM0 RM1, ALL, 50)
