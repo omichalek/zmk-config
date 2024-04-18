@@ -41,11 +41,11 @@
   behaviors {
         hht: hold_tap_hold-pref {
             compatible = "zmk,behavior-hold-tap";
+            hold-while-undecided;
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
-//            flavor = "hold-preferred";    // hh
-            flavor = "hold-while-undecided";
+            flavor = "hold-preferred";    // hh
             bindings = <&kp>, <&kp>;      // HOLD TAP
         };
     
