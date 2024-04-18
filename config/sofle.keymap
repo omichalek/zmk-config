@@ -25,7 +25,7 @@
 #define NAV 1
 #define NUM 2
 #define MIR 3
-#define SYSTEM 4
+#define SYS 4
 
 
 // ///   EC11 Encoders   /// //
@@ -128,9 +128,9 @@ ZMK_CONDITIONAL_LAYER(1 2, 4)
 ZMK_LAYER(base,
 
 &htt F1 ESC &kp F2    &kp F3  &kp F4  &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11       &kp K_CALC
-&lt 3 TAB  &kp Q     &kp W   &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &my_rm
+&kp TAB    &kp Q     &kp W   &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &my_rm
 &kp LSHFT  &kp A     &kp R   &kp S   &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O         &kp RCTRL
-&kp SPACE  &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT    &kp RET
+&lt 3 SPACE  &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &lt 3 RET
            &kp LGUI  &kp LALT &mo NUM  &mo NAV  &kp LCTRL    &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp RGUI,
 
 &inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN
@@ -177,7 +177,7 @@ ZMK_LAYER(mirror,
 
 
 
-ZMK_LAYER(system,
+ZMK_LAYER(sys,
 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR                  &trans    &trans    &trans   &trans    &trans  &trans
 &trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                        &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
@@ -221,4 +221,5 @@ ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RM3 RM4, ALL, 50)
 //  curly?
 ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RB0 RM1, ALL, 50)
 ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RB1 RM2, ALL, 50)
+
 
