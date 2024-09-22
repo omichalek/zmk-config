@@ -27,7 +27,7 @@
 #define MIR 3
 #define SYS 4
 
-#define ALFA (&mo NAV)
+#define ALFA (LH1)
 
 
 // ///   EC11 Encoders   /// //
