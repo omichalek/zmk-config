@@ -27,6 +27,8 @@
 #define MIR 3
 #define SYS 4
 
+#define ALFA (&mo NAV)
+
 
 // ///   EC11 Encoders   /// //
 &sensors {
