@@ -27,7 +27,7 @@
 #define MIR 3
 #define SYS 4
 
-#define ALFA (LH1)
+// #define ALFA (LH1)
 
 
 // ///   EC11 Encoders   /// //
@@ -197,7 +197,7 @@ ZMK_LAYER(sys,
 
 
 //  DIACRITICS TEST
-ZMK_COMBO(cs-sh, &kp CS_S_CARON, S ALFA, 0, 50)
+ZMK_COMBO(cs-sh, &kp CS_S_CARON, S LH1, 0, 50)
 
 
 //  MOUSE KEY PRESS
