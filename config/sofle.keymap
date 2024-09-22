@@ -196,6 +196,10 @@ ZMK_LAYER(sys,
 // ///   CUSTOM COMBOS   /// //
 
 
+//  DIACRITICS TEST
+ZMK_COMBO(cs_sh, &kp CS_S_CARON, S ALFA, 0, 50)
+
+
 //  MOUSE KEY PRESS
 //  left right middle
 ZMK_COMBO(mouse-l, &mkp MB1, RN1 RN2, ALL, 50)
