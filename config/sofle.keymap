@@ -197,7 +197,7 @@ ZMK_LAYER(sys,
 
 
 //  DIACRITICS TEST
-ZMK_COMBO(cs_sh, &kp CS_S_CARON, S ALFA, 0, 50)
+ZMK_COMBO(cs-sh, &kp CS_S_CARON, S ALFA, 0, 50)
 
 
 //  MOUSE KEY PRESS
