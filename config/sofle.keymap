@@ -199,9 +199,10 @@ ZMK_LAYER(sys,
 //  DIACRITICS TEST
 //ZMK_COMBO(cs-sh, &kp CS_S_CARON, S LH1, 0, 50)
 // 
-ZMK_COMBO(cs-sh, &kp CS_A_ACUTE, LM4 LH1, ALL, 100)
-ZMK_COMBO(cs-sh, &kp CS_S_CARON, LM2 LH1, 0, 100)
-
+ZMK_COMBO(cs-aa, &kp CS_A_ACUTE, LM4 LH1, ALL, 100)
+ZMK_COMBO(cs-rr, &kp CS_R_CARON, LM3 LH1, 0 3, 100)
+ZMK_COMBO(cs-sh, &kp CS_S_CARON, LM2 LH1, 0 3, 100)
+//ZMK_COMBO(cs-tt, &kp ???, LM1 LH1, 0 3, 100)
 
 
 
