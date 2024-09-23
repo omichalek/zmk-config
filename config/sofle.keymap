@@ -198,17 +198,11 @@ ZMK_LAYER(sys,
 
 //  DIACRITICS TEST
 //ZMK_COMBO(cs-sh, &kp CS_S_CARON, S LH1, 0, 50)
+// 
+ZMK_COMBO(cs-sh, &kp CS_A_ACUTE, LM4 LH1, ALL, 100)
+ZMK_COMBO(cs-sh, &kp CS_S_CARON, LM2 LH1, 0, 100)
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_cs-sh {
-            timeout-ms = <50>;
-            key-positions = <LM2 LH1>;
-            bindings = <&kp CS_S_CARON>;
-        };
-    };
-};
+
 
 
 //  MOUSE KEY PRESS
