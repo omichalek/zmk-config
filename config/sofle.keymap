@@ -45,7 +45,7 @@
             compatible = "zmk,behavior-hold-tap";
             hold-while-undecided;
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <100>;      // 150
             quick-tap-ms = <0>;
             flavor = "hold-preferred";    // hh
             bindings = <&kp>, <&kp>;      // HOLD TAP
@@ -197,14 +197,14 @@ ZMK_LAYER(sys,
 
 
 // DIACRITICS, LEFT
-ZMK_COMBO(cs-aa, &kp CS_A_ACUTE, LM4 LH1, 0, 100)
-ZMK_COMBO(cs-rh, &kp CS_R_CARON, LM3 LH1, 0, 100)
-ZMK_COMBO(cs-sh, &kp CS_S_CARON, LM2 LH1, 0, 100)
+//ZMK_COMBO(cs-aa, &kp CS_A_ACUTE, LM4 LH1, 0, 100)
+//ZMK_COMBO(cs-rh, &kp CS_R_CARON, LM3 LH1, 0, 100)
+//ZMK_COMBO(cs-sh, &kp CS_S_CARON, LM2 LH1, 0, 100)
 //ZMK_COMBO(cs-tt, &kp ???, LM1 LH1, 0 3, 100)
 //ZMK_COMBO(cs-dd, &kp ???, LM0 LH1, 0 3, 100)
  
-ZMK_COMBO(cs-zh, &kp CS_Z_CARON, LB4 LH1, 0, 100)
-ZMK_COMBO(cs-ch, &kp CS_C_CARON, LB2 LH1, 0, 100)
+//ZMK_COMBO(cs-zh, &kp CS_Z_CARON, LB4 LH1, 0, 100)
+//ZMK_COMBO(cs-ch, &kp CS_C_CARON, LB2 LH1, 0, 100)
 
 // DIACRITICS, RIGHT
 ZMK_COMBO(cs-uu, &kp CS_U_ACUTE, RT2 RH1, 0, 100)
