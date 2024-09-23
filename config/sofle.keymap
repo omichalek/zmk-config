@@ -196,13 +196,26 @@ ZMK_LAYER(sys,
 // ///   CUSTOM COMBOS   /// //
 
 
-//  DIACRITICS TEST
-//ZMK_COMBO(cs-sh, &kp CS_S_CARON, S LH1, 0, 50)
-// 
-ZMK_COMBO(cs-aa, &kp CS_A_ACUTE, LM4 LH1, ALL, 100)
-ZMK_COMBO(cs-rr, &kp CS_R_CARON, LM3 LH1, 0 3, 100)
-ZMK_COMBO(cs-sh, &kp CS_S_CARON, LM2 LH1, 0 3, 100)
+// DIACRITICS, LEFT
+ZMK_COMBO(cs-aa, &kp CS_A_ACUTE, LM4 LH1, 0, 100)
+ZMK_COMBO(cs-rh, &kp CS_R_CARON, LM3 LH1, 0, 100)
+ZMK_COMBO(cs-sh, &kp CS_S_CARON, LM2 LH1, 0, 100)
 //ZMK_COMBO(cs-tt, &kp ???, LM1 LH1, 0 3, 100)
+//ZMK_COMBO(cs-dd, &kp ???, LM0 LH1, 0 3, 100)
+ 
+ZMK_COMBO(cs-zh, &kp CS_Z_CARON, LB4 LH1, 0, 100)
+ZMK_COMBO(cs-ch, &kp CS_C_CARON, LB2 LH1, 0, 100)
+
+// DIACRITICS, RIGHT
+ZMK_COMBO(cs-uu, &kp CS_U_ACUTE, RT2 RH1, 0, 100)
+ZMK_COMBO(cs-uo, &kp CS_U_RING , RT2 RH0, 0, 100)
+ZMK_COMBO(cs-yy, &kp CS_Y_ACUTE, RT3 RH1, 0, 100)
+//_neio
+//ZMK_COMBO(cs-nh, &kp ???, RM2 RH1, 0, 100)
+ZMK_COMBO(cs-ee, &kp CS_E_ACUTE, RM2 RH1, 0, 100)
+ZMK_COMBO(cs-ie, &kp CS_E_CARON, RM2 RH0, 0, 100)
+ZMK_COMBO(cs-ii, &kp CS_I_ACUTE, RM3 RH1, 0, 100)
+//ZMK_COMBO(cs-oo, &kp ???, RM2 RH1, 0, 100)
 
 
 
