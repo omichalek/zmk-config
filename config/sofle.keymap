@@ -129,8 +129,12 @@
 };
 
 
-// //  CUSTOM diacritics, without shifted variant for now
-ZMK_BEHAVIOR(my_oo, macro, bindings = <&kp CS_ACUTE &kp O>;)
+// //  CUSTOM diacritics, shifted variants work as follows:
+//     1. macro for lower case   2. macro for upper case   3. mod morph to combine them
+ZMK_MACRO(my_ool, bindings = <&kp CS_ACUTE &kp O>;)
+ZMK_MACRO(my_oou, bindings = <&kp CS_ACUTE &kp LS(O)>;)
+ZMK_MOD_MORPH(my_oo, bindings = <&my_ool>, <&my_oou>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
 ZMK_BEHAVIOR(my_lh, macro, bindings = <&kp CS_CARON &kp L>;)
 ZMK_BEHAVIOR(my_dh, macro, bindings = <&kp CS_CARON &kp D>;)
 ZMK_BEHAVIOR(my_nh, macro, bindings = <&kp CS_CARON &kp N>;)
