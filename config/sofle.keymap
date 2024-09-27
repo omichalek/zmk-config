@@ -250,7 +250,7 @@ ZMK_LAYER(o,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-         &trans  &trans  &trans  &kp my_oo &trans    &trans  &kp my_oo  &trans  &trans  &trans,
+         &trans  &trans  &trans  &my_oo &trans    &trans  &my_oo  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
