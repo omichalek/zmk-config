@@ -92,9 +92,11 @@
 
 
 // /    CUSTOM KEYS    / //
-
+// ?!
 ZMK_MOD_MORPH(my_qmem, bindings = <&kp CS_QMARK>, <&kp CS_EXCL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+// ,;
 ZMK_MOD_MORPH(my_cose, bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//.,    for a numpad maybe
 ZMK_MOD_MORPH(my_doco, bindings = <&kp CS_PERIOD>, <&kp CS_COMMA>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 ZMK_MOD_MORPH(my_rm,   bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 ZMK_MOD_MORPH(my_quo,  bindings = <&kp CS_DOUBLE_QUOTES>, <&kp CS_SINGLE_QUOTE>; mods = <(MOD_LSFT|MOD_RSFT)>;)
@@ -107,16 +109,16 @@ ZMK_MACRO(my_ool,    bindings = <&kp CS_ACUTE &kp O>;)
 ZMK_MACRO(my_oou,    bindings = <&kp CS_ACUTE &kp LS(O)>;)
 ZMK_MOD_MORPH(my_oo, bindings = <&my_ool>, <&my_oou>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-ZMK_MACRO(my_lh,     bindings = <&kp LS(CS_ACUTE) &kp L>;)
+ZMK_MACRO(my_lh,     bindings = <&kp CS_CARON &kp L>;)
 
-ZMK_MACRO(my_dhl,    bindings = <&kp LS(CS_ACUTE) &kp D>;)
-ZMK_MACRO(my_dhu,    bindings = <&kp LS(CS_ACUTE) &kp LS(D)>;)
+ZMK_MACRO(my_dhl,    bindings = <&kp CS_CARON &kp D>;)
+ZMK_MACRO(my_dhu,    bindings = <&kp CS_CARON &kp LS(D)>;)
 ZMK_MOD_MORPH(my_dh, bindings = <&my_dhl>, <&my_dhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-ZMK_MACRO(my_nh,     bindings = <&kp LS(CS_ACUTE) &kp N>;)
+ZMK_MACRO(my_nh,     bindings = <&kp CS_CARON &kp N>;)
 
-ZMK_MACRO(my_thl,    bindings = <&kp LS(CS_ACUTE) &kp T>;)
-ZMK_MACRO(my_thu,    bindings = <&kp LS(CS_ACUTE) &kp LS(T)>;)
+ZMK_MACRO(my_thl,    bindings = <&kp CS_CARON &kp T>;)
+ZMK_MACRO(my_thu,    bindings = <&kp CS_CARON &kp LS(T)>;)
 ZMK_MOD_MORPH(my_th, bindings = <&my_thl>, <&my_thu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 
@@ -142,10 +144,8 @@ ZMK_LAYER(base,
 &kp LSHFT    &lt LYA A  &lt LYR R  &lt LYS S  &lt LYT T  &lt LYD D                          &kp H  &lt LYN N  &lt LYE E  &lt LYI I  &lt LYO O     &kp LCTRL
 &lt MIR SPACE  &lt LYZ CS_Z &kp X &lt LYC C  &kp V   &kp B  &kp C_MUTE    &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &lt MIR RET
           &kp LGUI  &kp LALT &mo NUM  &mo NAV  &hht LCTRL RET   &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp LGUI,
-//
 &inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN
 )
-
 
 
 ZMK_LAYER(nav-num,
@@ -155,10 +155,8 @@ ZMK_LAYER(nav-num,
 &trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                       &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &trans
 &trans    &kp NUBS  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_EQUAL  &trans
                     &trans    &trans    &trans    &trans     &trans   &trans  &trans            &kp KP_N0   &trans    &trans, 
-//
 &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
 )
-
 
 
 ZMK_LAYER(num-nav,
@@ -168,10 +166,8 @@ ZMK_LAYER(num-nav,
 &trans     &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp CS_PLUS                        &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT &kp END    &trans
 &trans     &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &my_doco    &kp C_BKLT_TOG &trans  &kp NUBS   &kp ENTER &kp SPACE &kp TAB   &kp PG_DN  &trans
                            &trans     &trans     &trans     &trans       &trans         &trans  &trans    &trans    &trans    &trans,
-//
 &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp PG_UP PG_DN
 )
-
 
 
 ZMK_LAYER(mirror,
@@ -181,32 +177,29 @@ ZMK_LAYER(mirror,
 &trans  &kp H     &kp N    &kp E    &kp I     &kp O                        &kp A     &kp R   &kp S    &kp T    &kp D    &trans
 &trans  &my_qmem  &kp M    &kp K    &my_cose  &kp CS_DOT  &trans  &trans   &kp CS_Z  &kp X   &kp C    &kp V    &kp B    &trans
                   &trans   &trans   &trans    &trans      &trans  &trans   &trans    &trans  &trans   &trans,
-//
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
 
 
-
 ZMK_LAYER(sys,
-
+//
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR                  &trans    &trans    &trans   &trans    &trans  &trans
 &trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                        &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
 &trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                      &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
 &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &trans  &trans  &trans    &trans    &trans   &trans    &trans  &trans
                         &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans,
-
 &inc_dec_kp &trans &trans &inc_dec_kp &trans &trans
 )
 
 
-// ///   EXTRA LAYERS for DIACRITICS, LETTER VARIANTS, SYMBOLS etc.   /// //
+// ///   EXTRA LAYERS for DIACRITICS, SYMBOLS etc.   /// //
 
 ZMK_LAYER(a,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-       &trans &trans &trans &kp CS_A_ACUTE &trans    &trans &kp CS_A_ACUTE &trans &trans &trans,
+       &trans &kp H  &trans &kp CS_A_ACUTE &trans    &trans &kp CS_A_ACUTE &trans &trans &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -215,7 +208,7 @@ ZMK_LAYER(e,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
- &trans &trans &kp CS_E_CARON &kp CS_E_ACUTE &trans &trans &kp CS_E_ACUTE &kp CS_E_CARON &trans &trans,
+ &trans &trans &kp CS_E_CARON &kp CS_E_ACUTE &trans &trans &kp CS_E_ACUTE &kp CS_E_CARON &kp S &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -262,7 +255,7 @@ ZMK_LAYER(c,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-    &trans  &trans  &trans  &kp CS_C_CARON &trans    &trans  &kp CS_C_CARON  &trans  &trans  &trans,
+    &trans  &kp K  &trans  &kp CS_C_CARON &trans    &trans  &kp CS_C_CARON  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -271,7 +264,7 @@ ZMK_LAYER(d,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-            &trans  &trans  &trans  &my_dh &trans    &trans  &my_dh  &trans  &trans  &trans,
+            &trans  &kp O  &trans  &my_dh &trans    &trans  &my_dh  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -298,7 +291,7 @@ ZMK_LAYER(r,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-    &trans  &trans  &trans  &kp CS_R_CARON &trans    &trans  &kp CS_R_CARON  &trans  &trans  &trans,
+    &trans  &kp N  &trans  &kp CS_R_CARON &trans    &trans  &kp CS_R_CARON  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -307,7 +300,7 @@ ZMK_LAYER(s,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-    &trans  &trans  &trans  &kp CS_S_CARON &trans    &trans  &kp CS_S_CARON  &trans  &trans  &trans,
+    &trans  &kp E  &trans  &kp CS_S_CARON &trans    &trans  &kp CS_S_CARON  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -316,7 +309,7 @@ ZMK_LAYER(t,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-            &trans  &trans  &trans  &my_th &trans    &trans  &my_th  &trans  &trans  &trans,
+            &trans  &kp I  &trans  &my_th &trans    &trans  &my_th  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
