@@ -80,40 +80,40 @@
 
         //  CUSTOM KEYS
 
-        my_qmem: questionmark_exclamationmark {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp CS_QMARK>, <&kp CS_EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+ //       my_qmem: questionmark_exclamationmark {
+ //           compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp CS_QMARK>, <&kp CS_EXCL>;
+//            mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
 
-        my_cose: comma_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+//       my_cose: comma_semicolon {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>;
+//            mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
 
-        my_doco: dot_comma {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp CS_PERIOD>, <&kp CS_COMMA>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+//        my_doco: dot_comma {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp CS_PERIOD>, <&kp CS_COMMA>;
+//            mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
 
-        my_rm: backspace_delete {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+//        my_rm: backspace_delete {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp BSPC>, <&kp DEL>;
+//            mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
 
-        my_quo: quotation-double-single {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp CS_DOUBLE_QUOTES>, <&kp CS_SINGLE_QUOTE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+//        my_quo: quotation-double-single {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp CS_DOUBLE_QUOTES>, <&kp CS_SINGLE_QUOTE>;
+//            mods = <(MOD_LSFT|MOD_RSFT)>;
+//        };
 
 
         //  CUSTOM F-KEYS using TAP DANCE  //  UNUSED
@@ -128,18 +128,32 @@
   };
 };
 
+ZMK_MOD_MORPH(my_qmem, bindings = <&kp CS_QMARK>, <&kp CS_EXCL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(my_cose, bindings = <&kp CS_COMMA>, <&kp CS_SEMICOLON>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(my_doco, bindings = <&kp CS_PERIOD>, <&kp CS_COMMA>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(my_rm,   bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(my_quo,  bindings = <&kp CS_DOUBLE_QUOTES>, <&kp CS_SINGLE_QUOTE>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+
 
 // //  CUSTOM diacritics, shifted variants work as follows:
 //     1. macro for lower case   2. macro for upper case   3. mod morph to combine them
+
 ZMK_MACRO(my_ool, bindings = <&kp CS_ACUTE &kp O>;)
 ZMK_MACRO(my_oou, bindings = <&kp CS_ACUTE &kp LS(O)>;)
 ZMK_MOD_MORPH(my_oo, bindings = <&my_ool>, <&my_oou>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-ZMK_BEHAVIOR(my_lh, macro, bindings = <&kp CS_CARON &kp L>;)
-ZMK_BEHAVIOR(my_dh, macro, bindings = <&kp CS_CARON &kp D>;)
-ZMK_BEHAVIOR(my_nh, macro, bindings = <&kp CS_CARON &kp N>;)
-ZMK_BEHAVIOR(my_th, macro, bindings = <&kp CS_CARON &kp T>;)
+ZMK_MACRO(my_lh, bindings = <&kp CS_CARON &kp L>;)
 
+ZMK_MACRO(my_dhl, bindings = <&kp CS_CARON &kp D>;)
+ZMK_MACRO(my_dhu, bindings = <&kp CS_CARON &kp LS(D)>;)
+ZMK_MOD_MORPH(my_dh, bindings = <&my_dhl>, <&my_dhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+ZMK_MACRO(my_nh, bindings = <&kp CS_CARON &kp N>;)
+
+ZMK_MACRO(my_thl, bindings = <&kp CS_CARON &kp T>;)
+ZMK_MACRO(my_thu, bindings = <&kp CS_CARON &kp LS(T)>;)
+ZMK_MOD_MORPH(my_th, bindings = <&my_thl>, <&my_thu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 
 // //   CUSTOM: UNICODE     normal            shifted
