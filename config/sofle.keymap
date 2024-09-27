@@ -17,9 +17,10 @@
 
 // All the ZMK_* commands below utilize zmk-nodefree-config:
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
-#include "../zmk-nodefree-config/helper.h"
+#include "zmk-helpers/helper.h"
 // positional key names for Sofle:
-#include "../zmk-nodefree-config/keypos_def/keypos_60keys.h"
+//#include "../zmk-nodefree-config/keypos_def/keypos_60keys.h"
+#include "zmk-helpers/key-labels/sofle.h"
 
 #define BASE 0
 #define NAV 1
@@ -124,7 +125,7 @@ ZMK_UNICODE_PAIR(uc_hi99,   N2, N0, N1, D,    N2, N0, N1, N9)
 // ///   LAYERS   /// //
 
 // Activate ADJUST layer by pressing
-ZMK_CONDITIONAL_LAYER(1 2, 4)
+ZMK_CONDITIONAL_LAYER(lyr_sys, 1 2, 4)
 
 
 
