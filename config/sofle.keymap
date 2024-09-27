@@ -28,7 +28,7 @@
 #define MIR 3
 #define SYS 4
 
-#define A 11
+#define A 5
 #define E 12
 #define I 13
 #define O 14
@@ -212,7 +212,6 @@ ZMK_LAYER(sys,
 // ///   EXTRA LAYERS for DIACRITICS, LETTER VARIANTS, SYMBOLS etc.   /// //
 
 ZMK_LAYER(a,
-
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
