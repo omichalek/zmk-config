@@ -129,9 +129,13 @@
 };
 
 
-        //  CUSTOM F-KEYS
+        //  CUSTOM diacritics, without shifted variant for now
 ZMK_BEHAVIOR(my_oo, macro, bindings = <&kp CS_ACUTE &kp O>;)
-ZMK_BEHAVIOR(my_dh, macro, bindings = <&kp CS_ACUTE &kp O>;)
+ZMK_BEHAVIOR(my_lh, macro, bindings = <&kp CS_ACUTE &kp L>;)
+ZMK_BEHAVIOR(my_dh, macro, bindings = <&kp CS_ACUTE &kp D>;)
+ZMK_BEHAVIOR(my_nh, macro, bindings = <&kp CS_ACUTE &kp N>;)
+ZMK_BEHAVIOR(my_th, macro, bindings = <&kp CS_ACUTE &kp T>;)
+
 
 
 // //   CUSTOM: UNICODE    normal            shifted
@@ -219,10 +223,10 @@ ZMK_LAYER(sys,
 // ///   EXTRA LAYERS for DIACRITICS, LETTER VARIANTS, SYMBOLS etc.   /// //
 
 ZMK_LAYER(a,
-&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans &trans
        &trans &trans &trans &kp CS_A_ACUTE &trans    &trans &kp CS_A_ACUTE &trans &trans &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
@@ -271,6 +275,81 @@ ZMK_LAYER(y,
     &trans  &trans  &trans  &kp CS_Y_ACUTE &trans    &trans  &kp CS_Y_ACUTE  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
+
+// ///   EXTRA LAYERS for DIACRITICS, LETTER VARIANTS, SYMBOLS etc.   /// //
+
+ZMK_LAYER(c,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+    &trans  &trans  &trans  &kp CS_C_CARON &trans    &trans  &kp CS_C_CARON  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(d,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+            &trans  &trans  &trans  &my_dh &trans    &trans  &my_dh  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(l,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+            &trans  &trans  &trans  &my_lh &trans    &trans  &my_lh  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(n,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+            &trans  &trans  &trans  &my_nh &trans    &trans  &my_nh  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(r,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+    &trans  &trans  &trans  &kp CS_R_CARON &trans    &trans  &kp CS_R_CARON  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(s,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+    &trans  &trans  &trans  &kp CS_S_CARON &trans    &trans  &kp CS_S_CARON  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(t,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+            &trans  &trans  &trans  &my_th &trans    &trans  &my_th  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(z,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+    &trans  &trans  &trans  &kp CS_Z_CARON &trans    &trans  &kp CS_Z_CARON  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
 
 
 // ///   CUSTOM COMBOS   /// //
