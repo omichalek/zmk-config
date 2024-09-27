@@ -107,16 +107,16 @@ ZMK_MACRO(my_ool,    bindings = <&kp CS_ACUTE &kp O>;)
 ZMK_MACRO(my_oou,    bindings = <&kp CS_ACUTE &kp LS(O)>;)
 ZMK_MOD_MORPH(my_oo, bindings = <&my_ool>, <&my_oou>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-ZMK_MACRO(my_lh,     bindings = <&kp MY_CARON &kp L>;)
+ZMK_MACRO(my_lh,     bindings = <&kp LS(CS_ACUTE) &kp L>;)
 
-ZMK_MACRO(my_dhl,    bindings = <&kp MY_CARON &kp D>;)
-ZMK_MACRO(my_dhu,    bindings = <&kp MY_CARON &kp LS(D)>;)
+ZMK_MACRO(my_dhl,    bindings = <&kp LS(CS_ACUTE) &kp D>;)
+ZMK_MACRO(my_dhu,    bindings = <&kp LS(CS_ACUTE) &kp LS(D)>;)
 ZMK_MOD_MORPH(my_dh, bindings = <&my_dhl>, <&my_dhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-ZMK_MACRO(my_nh,     bindings = <&kp MY_CARON &kp N>;)
+ZMK_MACRO(my_nh,     bindings = <&kp LS(CS_ACUTE) &kp N>;)
 
-ZMK_MACRO(my_thl,    bindings = <&kp MY_CARON &kp T>;)
-ZMK_MACRO(my_thu,    bindings = <&kp MY_CARON &kp LS(T)>;)
+ZMK_MACRO(my_thl,    bindings = <&kp LS(CS_ACUTE) &kp T>;)
+ZMK_MACRO(my_thu,    bindings = <&kp LS(CS_ACUTE) &kp LS(T)>;)
 ZMK_MOD_MORPH(my_th, bindings = <&my_thl>, <&my_thu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 
