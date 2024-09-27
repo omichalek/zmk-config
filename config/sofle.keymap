@@ -77,7 +77,7 @@
             flavor = "tap-preferred";   // tt
             bindings = <&kp>, <&kp>;    // HOLD TAP
         };
-  
+
         //  CUSTOM KEYS
 
         my_qmem: questionmark_exclamationmark {
@@ -115,7 +115,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-    
+
         //  CUSTOM F-KEYS
         
         my_f1: tap_dance_f1 {
@@ -127,6 +127,12 @@
     
   };
 };
+
+
+        //  CUSTOM F-KEYS
+ZMK_BEHAVIOR(my_oo, macro, bindings = <&kp CS_ACUTE &kp O>;)
+ZMK_BEHAVIOR(my_dh, macro, bindings = <&kp CS_ACUTE &kp O>;)
+
 
 // //   CUSTOM: UNICODE    normal            shifted
 // quotation marks
@@ -148,10 +154,10 @@ ZMK_CONDITIONAL_LAYER(lyr_sys, NAV NUM, SYS)
 
 ZMK_LAYER(base,
 
-&htt F1 ESC &kp F2    &kp F3  &kp F4  &kp F5    &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END   &kp F11       &kp C_AL_CALC
-&kp TAB    &kp Q      &kp W   &kp F   &kp P     &kp G                          &kp J     &kp L     &kp U      &kp CS_Y  &kp CS_MINUS  &my_rm
-&kp LSHFT  &lt LYA A   &kp R   &kp S   &kp T     &kp D                          &kp H     &kp N     &kp E      &kp I     &kp O         &kp LCTRL
-&lt MIR SPACE  &kp CS_Z  &kp X   &kp C   &kp V     &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &lt MIR RET
+&htt F1 ESC &kp F2    &kp F3  &kp F4  &kp F5   &kp F6                         &kp PSCRN &kp HOME  &kp C_PP   &kp END       &kp F11       &kp C_AL_CALC
+&kp TAB    &kp Q      &kp W   &kp F   &kp P    &kp G                          &kp J     &kp L     &lt LYU U  &lt LYY CS_Y  &kp CS_MINUS  &my_rm
+&kp LSHFT  &lt LYA A  &kp R   &kp S   &kp T    &kp D                          &kp H     &kp N     &lt LYE E  &lt LYI I &lt LYO O     &kp LCTRL
+&lt MIR SPACE  &kp CS_Z  &kp X  &kp C  &kp V   &kp B  &kp C_MUTE  &kp C_MUTE  &my_qmem  &kp M     &kp K      &my_cose  &kp CS_DOT  &lt MIR RET
          &kp LGUI  &kp LALT &mo NUM  &mo NAV  &hht LCTRL RET   &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp LGUI,
 
 &inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN
@@ -213,15 +219,58 @@ ZMK_LAYER(sys,
 // ///   EXTRA LAYERS for DIACRITICS, LETTER VARIANTS, SYMBOLS etc.   /// //
 
 ZMK_LAYER(a,
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-               &trans  &trans  &trans  &kp CS_A_ACUTE &trans    &trans  &kp CS_A_ACUTE  &trans  &trans  &trans,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+       &trans &trans &trans &kp CS_A_ACUTE &trans    &trans &kp CS_A_ACUTE &trans &trans &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
+ZMK_LAYER(e,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+ &trans &trans &kp CS_E_CARON &kp CS_E_ACUTE &trans &trans &kp CS_E_ACUTE &kp CS_E_CARON &trans &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
 
+ZMK_LAYER(i,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+    &trans  &trans  &trans  &kp CS_I_ACUTE &trans    &trans  &kp CS_I_ACUTE  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(o,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+         &trans  &trans  &trans  &kp my_oo &trans    &trans  &kp my_oo  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(u,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+ &trans  &trans  &kp CS_U_ACUTE  &kp CS_U_RING &trans    &trans  &kp CS_U_RING &kp CS_U_ACUTE  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
+
+ZMK_LAYER(y,
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
+    &trans  &trans  &trans  &kp CS_Y_ACUTE &trans    &trans  &kp CS_Y_ACUTE  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+)
 
 
 // ///   CUSTOM COMBOS   /// //
