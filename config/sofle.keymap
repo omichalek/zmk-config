@@ -28,7 +28,7 @@
 #define MIR 3
 #define SYS 4
 
-// layer ALIASES for diacritics, maybe symbols 
+// layer ALIASES for diacritics, maybe symbols, maybe KB half mirroring
 #define LYA 5
 #define LYE 6
 #define LYI 7
@@ -131,10 +131,10 @@
 
 // //  CUSTOM diacritics, without shifted variant for now
 ZMK_BEHAVIOR(my_oo, macro, bindings = <&kp CS_ACUTE &kp O>;)
-ZMK_BEHAVIOR(my_lh, macro, bindings = <&kp CS_ACUTE &kp L>;)
-ZMK_BEHAVIOR(my_dh, macro, bindings = <&kp CS_ACUTE &kp D>;)
-ZMK_BEHAVIOR(my_nh, macro, bindings = <&kp CS_ACUTE &kp N>;)
-ZMK_BEHAVIOR(my_th, macro, bindings = <&kp CS_ACUTE &kp T>;)
+ZMK_BEHAVIOR(my_lh, macro, bindings = <&kp CS_CARON &kp L>;)
+ZMK_BEHAVIOR(my_dh, macro, bindings = <&kp CS_CARON &kp D>;)
+ZMK_BEHAVIOR(my_nh, macro, bindings = <&kp CS_CARON &kp N>;)
+ZMK_BEHAVIOR(my_th, macro, bindings = <&kp CS_CARON &kp T>;)
 
 
 
