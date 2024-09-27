@@ -28,7 +28,7 @@
 #define MIR 3
 #define SYS 4
 
-#define A 5
+#define A 11
 #define E 12
 #define I 13
 #define O 14
@@ -217,7 +217,7 @@ ZMK_LAYER(a,
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
                &trans  &trans  &trans  &kp CS_A_ACUTE &trans    &trans  &kp CS_A_ACUTE  &trans  &trans  &trans,
-&trans &trans &trans    &trans &trans &trans
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
 
