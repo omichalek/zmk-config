@@ -22,11 +22,18 @@
 //#include "../zmk-nodefree-config/keypos_def/keypos_60keys.h"
 #include "zmk-helpers/key-labels/sofle.h"
 
-//#define BASE 0
-//#define NAV 1
-//#define NUM 2
-//#define MIR 3
-//#define SYS 4
+#define BASE 0
+#define NAV 1
+#define NUM 2
+#define MIR 3
+#define SYS 4
+
+#define A 11
+#define E 12
+#define I 13
+#define O 14
+#define U 15
+#define Y 16
 
 // #define ALFA (LH1)
 
