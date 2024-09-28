@@ -102,24 +102,82 @@ ZMK_MOD_MORPH(my_rm,   bindings = <&kp BSPC>, <&kp DEL>; mods = <(MOD_LSFT|MOD_R
 ZMK_MOD_MORPH(my_quo,  bindings = <&kp CS_DOUBLE_QUOTES>, <&kp CS_SINGLE_QUOTE>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 
+
 // /  CUSTOM diacritics, shifted variants work as follows:
 //     1. macro for lower case   2. macro for upper case   3. mod morph to combine them
 
+//   á
+ZMK_MACRO(my_aau,    bindings = <&kp CS_ACUTE &kp LS(A)>;)
+ZMK_MOD_MORPH(my_aa, bindings = <&kp CS_A_ACUTE>, <&my_aau>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//
+ZMK_MACRO(my_aull,    bindings = <&kp CS_UMLAUT &kp A>;)
+ZMK_MACRO(my_aulu,    bindings = <&kp CS_UMLAUT &kp LS(A)>;)
+ZMK_MOD_MORPH(my_aul, bindings = <&my_aull>, <&my_aulu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+//   é
+ZMK_MACRO(my_eeu,    bindings = <&kp CS_ACUTE &kp LS(E)>;)
+ZMK_MOD_MORPH(my_ee, bindings = <&kp CS_E_ACUTE>, <&my_eeu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//
+ZMK_MACRO(my_ijeu,    bindings = <&kp CS_CARON &kp LS(E)>;)
+ZMK_MOD_MORPH(my_ije, bindings = <&kp CS_E_CARON>, <&my_ijeu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+//   í
+ZMK_MACRO(my_iiu,    bindings = <&kp CS_ACUTE &kp LS(E)>;)
+ZMK_MOD_MORPH(my_ii, bindings = <&kp CS_I_ACUTE>, <&my_iiu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+//   ó
 ZMK_MACRO(my_ool,    bindings = <&kp CS_ACUTE &kp O>;)
 ZMK_MACRO(my_oou,    bindings = <&kp CS_ACUTE &kp LS(O)>;)
 ZMK_MOD_MORPH(my_oo, bindings = <&my_ool>, <&my_oou>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//
+ZMK_MACRO(my_oull,    bindings = <&kp CS_UMLAUT &kp O>;)
+ZMK_MACRO(my_oulu,    bindings = <&kp CS_UMLAUT &kp LS(O)>;)
+ZMK_MOD_MORPH(my_oul, bindings = <&my_oull>, <&my_oulu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-ZMK_MACRO(my_lh,     bindings = <&kp CS_CARON &kp L>;)
+//   ú
+ZMK_MACRO(my_uuu,    bindings = <&kp CS_ACUTE &kp LS(U)>;)
+ZMK_MOD_MORPH(my_uu, bindings = <&kp CS_U_ACUTE>, <&my_uuu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//
+ZMK_MACRO(my_uou,    bindings = <&kp CAPS &kp CS_U_RING &kp CAPS>;)
+ZMK_MOD_MORPH(my_uo, bindings = <&kp CS_U_RING>, <&my_uou>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//
+ZMK_MACRO(my_uull,    bindings = <&kp CS_UMLAUT &kp U>;)
+ZMK_MACRO(my_uulu,    bindings = <&kp CS_UMLAUT &kp LS(U)>;)
+ZMK_MOD_MORPH(my_uul, bindings = <&my_uull>, <&my_uulu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
+//   ý
+ZMK_MACRO(my_yyu,    bindings = <&kp CS_ACUTE &kp LS(Y)>;)
+ZMK_MOD_MORPH(my_yy, bindings = <&kp CS_Y_ACUTE>, <&my_yyu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+
+
+//   č
+ZMK_MACRO(my_chu,    bindings = <&kp CS_CARON &kp LS(C)>;)
+ZMK_MOD_MORPH(my_ch, bindings = <&kp CS_C_CARON>, <&my_chu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//   Ç ç   CS_CEDILLA
+
+
+//   ď
 ZMK_MACRO(my_dhl,    bindings = <&kp CS_CARON &kp D>;)
 ZMK_MACRO(my_dhu,    bindings = <&kp CS_CARON &kp LS(D)>;)
 ZMK_MOD_MORPH(my_dh, bindings = <&my_dhl>, <&my_dhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-ZMK_MACRO(my_nh,     bindings = <&kp CS_CARON &kp N>;)
+//   ľ
+ZMK_MACRO(my_lhl,    bindings = <&kp CS_CARON &kp L>;)
+ZMK_MACRO(my_lhu,    bindings = <&kp CS_CARON &kp LS(L)>;)
+ZMK_MOD_MORPH(my_lh, bindings = <&my_lhl>, <&my_lhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
+//   ň
+ZMK_MACRO(my_nhl,    bindings = <&kp CS_CARON &kp N>;)
+ZMK_MACRO(my_nhu,    bindings = <&kp CS_CARON &kp LS(N)>;)
+ZMK_MOD_MORPH(my_nh, bindings = <&my_nhl>, <&my_nhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+//   ť
 ZMK_MACRO(my_thl,    bindings = <&kp CS_CARON &kp T>;)
 ZMK_MACRO(my_thu,    bindings = <&kp CS_CARON &kp LS(T)>;)
 ZMK_MOD_MORPH(my_th, bindings = <&my_thl>, <&my_thu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+
 
 
 // /   CUSTOM: UNICODE     normal            shifted
@@ -133,7 +191,7 @@ ZMK_UNICODE_PAIR(uc_hi99,   N2, N0, N1, D,    N2, N0, N1, N9)     // ” / ’
 // ///   LAYERS   /// //
 
 // Activate ADJUST layer by pressing
-ZMK_CONDITIONAL_LAYER(lyr_sys, NAV NUM, SYS)
+//ZMK_CONDITIONAL_LAYER(lyr_sys, NAV NUM, SYS)
 
 
 
@@ -154,7 +212,7 @@ ZMK_LAYER(nav-num,
 &trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                     &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &trans
 &trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                       &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &trans
 &trans    &kp NUBS  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_EQUAL  &trans
-                    &trans    &trans    &trans    &trans     &trans   &trans  &trans            &kp KP_N0   &trans    &trans, 
+                    &trans    &trans    &kp LALT   &trans     &trans     &trans  &trans         &kp KP_N0   &trans    &trans, 
 &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
 )
 
@@ -192,6 +250,7 @@ ZMK_LAYER(sys,
 )
 
 
+
 // ///   EXTRA LAYERS for DIACRITICS, SYMBOLS etc.   /// //
 
 ZMK_LAYER(a,
@@ -199,7 +258,7 @@ ZMK_LAYER(a,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-       &trans &kp H  &trans &kp CS_A_ACUTE &trans    &trans &kp CS_A_ACUTE &trans &trans &trans,
+              &trans &kp H  &trans &my_aa &trans      &trans &my_aa &trans &trans &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -208,8 +267,8 @@ ZMK_LAYER(e,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
- &trans &trans &kp CS_E_CARON &kp CS_E_ACUTE &trans &trans &kp CS_E_ACUTE &kp CS_E_CARON &kp S &trans,
-&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+ &trans &trans &kp CS_EURO &kp CS_E_ACUTE &kp CS_E_CARON   &kp CS_E_CARON &kp CS_E_ACUTE &kp CS_EURO &kp S &trans,      
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans 
 )
 
 ZMK_LAYER(i,

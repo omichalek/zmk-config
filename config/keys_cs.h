@@ -1,4 +1,3 @@
-
 /*
  * Localized Keys for Czech
  *
@@ -51,6 +50,9 @@
  * use or other dealings in these Data Files or Software without prior
  * written authorization of the copyright holder.
  */
+
+//  taken from
+//  fixed CS_CARON
 
 #pragma once
 
@@ -377,7 +379,6 @@
 
 /* ˇ */
 //#define CS_CARON (RA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_2_AND_AT)))
-// my fix:
 #define CS_CARON (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EQUAL_AND_PLUS)))
 
 /* ˘ */
