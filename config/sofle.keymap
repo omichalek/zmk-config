@@ -180,8 +180,10 @@ ZMK_MOD_MORPH(my_ll, bindings = <&my_lll>, <&my_llu>; mods = <(MOD_LSFT|MOD_RSFT
 ZMK_MACRO(my_nhl,    bindings = <&kp CS_CARON &kp N>;)
 ZMK_MACRO(my_nhu,    bindings = <&kp CS_CARON &kp LS(N)>;)
 ZMK_MOD_MORPH(my_nh, bindings = <&my_nhl>, <&my_nhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
-
-
+//   
+ZMK_MACRO(my_ntl,    bindings = <&kp CS_TILDE &kp N>;)
+ZMK_MACRO(my_ntu,    bindings = <&kp CS_TILDE &kp LS(N)>;)
+ZMK_MOD_MORPH(my_nt, bindings = <&my_ntl>, <&my_ntu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 //   ř
 ZMK_MACRO(my_rhu,    bindings = <&kp CS_CARON &kp LS(R)>;)
@@ -284,7 +286,7 @@ ZMK_LAYER(a,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-              &trans &kp H  &my_aul &my_aa &trans      &trans &my_aa &my_aul &trans &trans,
+        &trans &kp H  &my_aul  &my_aa  &kp CS_AT      &kp CS_AT  &my_aa  &my_aul &trans &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -340,7 +342,7 @@ ZMK_LAYER(c,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-           &trans  &kp K  &my_cc  &my_ch  &trans      &trans  &my_ch  &my_cc  &trans  &trans,
+       &trans  &kp K  &my_cc  &my_ch  &kp CS_AMPS    &kp CS_AMPS  &my_ch  &my_cc  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -367,7 +369,7 @@ ZMK_LAYER(n,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-          &trans  &trans  &trans  &my_nh  &trans      &trans  &my_nh  &trans  &kp R  &trans,
+          &trans  &trans  &my_nt  &my_nh  &trans      &trans  &my_nh  &my_nt  &kp R  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
