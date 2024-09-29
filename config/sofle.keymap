@@ -127,6 +127,10 @@ ZMK_MOD_MORPH(my_ii, bindings = <&kp CS_I_ACUTE>, <&my_iiu>; mods = <(MOD_LSFT|M
 ZMK_MACRO(my_ool,    bindings = <&kp CS_ACUTE &kp O>;)
 ZMK_MACRO(my_oou,    bindings = <&kp CS_ACUTE &kp LS(O)>;)
 ZMK_MOD_MORPH(my_oo, bindings = <&my_ool>, <&my_oou>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//   Ô ô   CS_CARET
+ZMK_MACRO(my_ocl,    bindings = <&kp CS_CARET &kp O>;)
+ZMK_MACRO(my_ocu,    bindings = <&kp CS_CARET &kp LS(O)>;)
+ZMK_MOD_MORPH(my_oc, bindings = <&my_ocl>, <&my_ocu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 //   
 ZMK_MACRO(my_oull,    bindings = <&kp CS_UMLAUT &kp O>;)
 ZMK_MACRO(my_oulu,    bindings = <&kp CS_UMLAUT &kp LS(O)>;)
@@ -177,13 +181,20 @@ ZMK_MACRO(my_nhl,    bindings = <&kp CS_CARON &kp N>;)
 ZMK_MACRO(my_nhu,    bindings = <&kp CS_CARON &kp LS(N)>;)
 ZMK_MOD_MORPH(my_nh, bindings = <&my_nhl>, <&my_nhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
+
+
 //   ř
 ZMK_MACRO(my_rhu,    bindings = <&kp CS_CARON &kp LS(R)>;)
 ZMK_MOD_MORPH(my_rh, bindings = <&kp CS_R_CARON>, <&my_rhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//   Ŕ ŕ
+ZMK_MACRO(my_rrl,    bindings = <&kp CS_ACUTE &kp R>;)
+ZMK_MACRO(my_rru,    bindings = <&kp CS_ACUTE &kp LS(R)>;)
+ZMK_MOD_MORPH(my_rr, bindings = <&my_rrl>, <&my_rru>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 //   š
 ZMK_MACRO(my_shu,    bindings = <&kp CS_CARON &kp LS(S)>;)
 ZMK_MOD_MORPH(my_sh, bindings = <&kp CS_S_CARON>, <&my_shu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+//   CS_ESZETT   CS_SZ
 
 //   ť
 ZMK_MACRO(my_thl,    bindings = <&kp CS_CARON &kp T>;)
@@ -248,7 +259,7 @@ ZMK_LAYER(mirror,
 &trans  &trans    &trans   &trans   &trans    &trans                       &trans    &trans  &trans   &trans   &trans   &trans
 &trans  &kp J     &kp L    &kp U     &kp CS_Y  &kp CS_MINUS                &kp Q     &kp W   &kp F    &kp P    &kp G    &trans
 &trans  &kp H     &kp N    &lt LYE E  &lt LYI I  &lt LYO O                 &kp A     &kp R   &kp S    &kp T    &kp D    &trans
-&trans  &my_qmem  &kp M    &kp K     &my_cose  &kp CS_DOT  &trans  &trans  &kp CS_Z  &kp X   &kp C    &kp V    &kp B    &trans
+&trans  &my_qmem  &kp M    &kp K    &my_cose  &kp CS_DOT  &trans   &trans  &kp CS_Z  &kp X   &kp C    &kp V    &kp B    &trans
                   &trans   &trans   &trans    &trans      &trans   &trans  &trans    &trans  &trans   &trans,
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
@@ -300,7 +311,7 @@ ZMK_LAYER(o,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-         &trans  &trans  &my_oul  &my_oo  &trans      &trans  &my_oo  &my_oul &trans  &trans,
+         &trans  &trans  &my_oul  &my_oo  &my_oc      &my_oc  &my_oo  &my_oul &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -365,7 +376,7 @@ ZMK_LAYER(r,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-           &trans  &kp N  &trans  &my_rh  &trans      &trans  &my_rh  &trans  &trans  &trans,
+           &trans  &kp N  &trans  &my_rh  &my_rr      &my_rr  &my_rh  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -374,7 +385,7 @@ ZMK_LAYER(s,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-           &trans  &kp E  &trans  &my_sh  &trans      &trans  &my_sh  &trans  &trans  &trans,
+   &trans  &kp E  &kp CS_SZ  &my_sh  &kp CS_DLLR      &kp CS_DLLR  &my_sh  &kp CS_SZ  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
