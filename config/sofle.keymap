@@ -156,7 +156,6 @@ ZMK_MACRO(my_chu,    bindings = <&kp CS_CARON &kp LS(C)>;)
 ZMK_MOD_MORPH(my_ch, bindings = <&kp CS_C_CARON>, <&my_chu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 //   Ç ç   CS_CEDILLA
 
-
 //   ď
 ZMK_MACRO(my_dhl,    bindings = <&kp CS_CARON &kp D>;)
 ZMK_MACRO(my_dhu,    bindings = <&kp CS_CARON &kp LS(D)>;)
@@ -172,12 +171,22 @@ ZMK_MACRO(my_nhl,    bindings = <&kp CS_CARON &kp N>;)
 ZMK_MACRO(my_nhu,    bindings = <&kp CS_CARON &kp LS(N)>;)
 ZMK_MOD_MORPH(my_nh, bindings = <&my_nhl>, <&my_nhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
+//   ř
+ZMK_MACRO(my_rhu,    bindings = <&kp CS_CARON &kp LS(R)>;)
+ZMK_MOD_MORPH(my_rh, bindings = <&kp CS_R_CARON>, <&my_rhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
+//   š
+ZMK_MACRO(my_shu,    bindings = <&kp CS_CARON &kp LS(S)>;)
+ZMK_MOD_MORPH(my_sh, bindings = <&kp CS_S_CARON>, <&my_shu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
+
 //   ť
 ZMK_MACRO(my_thl,    bindings = <&kp CS_CARON &kp T>;)
 ZMK_MACRO(my_thu,    bindings = <&kp CS_CARON &kp LS(T)>;)
 ZMK_MOD_MORPH(my_th, bindings = <&my_thl>, <&my_thu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
-
+//   ž
+ZMK_MACRO(my_zhu,    bindings = <&kp CS_CARON &kp LS(Z)>;)
+ZMK_MOD_MORPH(my_zh, bindings = <&kp CS_Z_CARON>, <&my_zhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 
 // /   CUSTOM: UNICODE     normal            shifted
