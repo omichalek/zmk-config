@@ -295,7 +295,7 @@ ZMK_LAYER(e,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-        &trans &trans &kp CS_EURO &my_ee &my_ije      &my_ije &my_ee &kp CS_EURO &kp S &trans,      
+&kp CS_EURO  &trans  &kp CS_AMPS  &my_ee  &my_ije    &my_ije  &my_ee  &kp CS_AMPS  &kp S  &kp CS_EURO,      
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans 
 )
 
