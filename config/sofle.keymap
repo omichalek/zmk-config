@@ -322,7 +322,7 @@ ZMK_LAYER(u,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-          &trans  &trans  &my_uul  &my_uo &my_uu      &my_uu  &my_uo  &my_uul  &trans  &trans,
+         &trans  &trans  &my_uul  &my_uu  &my_uo      &my_uo  &my_uu  &my_uul  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -342,7 +342,7 @@ ZMK_LAYER(c,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-       &trans  &kp K  &my_cc  &my_ch  &kp CS_AMPS    &kp CS_AMPS  &my_ch  &my_cc  &trans  &trans,
+       &trans  &kp K  &my_cc  &kp CS_AMPS  &my_ch    &my_ch  &kp CS_AMPS  &my_cc  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -351,7 +351,7 @@ ZMK_LAYER(d,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-            &trans  &kp O  &trans  &my_dh &trans      &trans  &my_dh  &trans  &trans  &trans,
+           &trans  &kp O  &trans  &trans  &my_dh      &my_dh  &trans  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -360,7 +360,7 @@ ZMK_LAYER(l,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-          &trans  &trans  &trans  &my_lh  &my_ll      &my_ll  &my_lh  &trans  &kp W  &trans,
+          &trans  &trans  &trans  &my_ll  &my_lh      &my_lh  &my_ll  &trans  &kp W  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -369,7 +369,7 @@ ZMK_LAYER(n,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-          &trans  &trans  &my_nt  &my_nh  &trans      &trans  &my_nh  &my_nt  &kp R  &trans,
+          &trans  &trans  &my_nt  &trans  &my_nh      &my_nh  &trans  &my_nt  &kp R  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -378,7 +378,7 @@ ZMK_LAYER(r,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-           &trans  &kp N  &trans  &my_rh  &my_rr      &my_rr  &my_rh  &trans  &trans  &trans,
+           &trans  &kp N  &trans  &my_rr  &my_rh      &my_rh  &my_rr  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -387,7 +387,7 @@ ZMK_LAYER(s,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-   &trans  &kp E  &kp CS_SZ  &my_sh  &kp CS_DLLR      &kp CS_DLLR  &my_sh  &kp CS_SZ  &trans  &trans,
+   &trans  &kp E  &kp CS_SZ  &kp CS_DLLR  &my_sh      &my_sh  &kp CS_DLLR  &kp CS_SZ  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
@@ -396,8 +396,8 @@ ZMK_LAYER(t,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-            &trans  &kp I  &trans  &my_th &trans      &trans  &my_th  &trans  &trans  &trans,
-&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
+      &trans  &kp I  &trans  &kp CS_AMPS  &my_th      &my_th  &kp CS_AMPS  &trans  &trans  &trans,
+&inc_dec_kp &trans &trans    &inc_d &transec_kp &trans &trans
 )
 
 ZMK_LAYER(z,
@@ -405,7 +405,7 @@ ZMK_LAYER(z,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
-          &trans  &trans  &trans  &my_zh  &trans      &trans  &my_zh  &trans  &trans  &trans,
+          &trans  &trans  &trans  &trans  &my_zh      &my_zh  &trans  &trans  &trans  &trans,
 &inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
