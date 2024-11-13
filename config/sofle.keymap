@@ -397,7 +397,7 @@ ZMK_LAYER(t,
 &trans &trans &trans &trans &trans &trans                    &trans &trans &trans &trans &trans &trans
 &trans &trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans &trans
       &trans  &kp I  &trans  &kp CS_AMPS  &my_th      &my_th  &kp CS_AMPS  &trans  &trans  &trans,
-&inc_dec_kp &trans &trans    &inc_d &transec_kp &trans &trans
+&inc_dec_kp &trans &trans    &inc_dec_kp &trans &trans
 )
 
 ZMK_LAYER(z,
