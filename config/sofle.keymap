@@ -204,7 +204,7 @@ ZMK_MACRO(my_thu,    bindings = <&kp CS_CARON &kp LS(T)>;)
 ZMK_MOD_MORPH(my_th, bindings = <&my_thl>, <&my_thu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 //   ž
-ZMK_MACRO(my_zhu,    bindings = <&kp CS_CARON &kp LS(Z)>;)
+ZMK_MACRO(my_zhu,    bindings = <&kp CS_CARON &kp LS(CS_Z)>;)
 ZMK_MOD_MORPH(my_zh, bindings = <&kp CS_Z_CARON>, <&my_zhu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 
