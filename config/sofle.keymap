@@ -148,7 +148,7 @@ ZMK_MACRO(my_uulu,    bindings = <&kp CS_UMLAUT &kp LS(U)>;)
 ZMK_MOD_MORPH(my_uul, bindings = <&my_uull>, <&my_uulu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 //   ý
-ZMK_MACRO(my_yyu,    bindings = <&kp CS_ACUTE &kp LS(Y)>;)
+ZMK_MACRO(my_yyu,    bindings = <&kp CS_ACUTE &kp LS(CS_Y)>;)
 ZMK_MOD_MORPH(my_yy, bindings = <&kp CS_Y_ACUTE>, <&my_yyu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 
