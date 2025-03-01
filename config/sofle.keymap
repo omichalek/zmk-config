@@ -120,7 +120,7 @@ ZMK_MACRO(my_ijeu,    bindings = <&kp CS_CARON &kp LS(E)>;)
 ZMK_MOD_MORPH(my_ije, bindings = <&kp CS_E_CARON>, <&my_ijeu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 //   í
-ZMK_MACRO(my_iiu,    bindings = <&kp CS_ACUTE &kp LS(E)>;)
+ZMK_MACRO(my_iiu,    bindings = <&kp CS_ACUTE &kp LS(I)>;)
 ZMK_MOD_MORPH(my_ii, bindings = <&kp CS_I_ACUTE>, <&my_iiu>; mods = <(MOD_LSFT|MOD_RSFT)>;)
 
 //   ó
