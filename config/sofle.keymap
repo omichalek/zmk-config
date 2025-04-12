@@ -23,13 +23,12 @@
 #include "zmk-helpers/key-labels/sofle.h"
 
 #define BASE 0
-#define NAV 1
-#define NUM 2
-#define MIR 3
-#define SYS 4
-
-// alternative layout - "vanilla" plain layer without letter layers
-#define ALT 5
+#define ALT 1 // alternative layout - "vanilla" plain layer without letter layers
+// the important ones:
+#define NAV 2
+#define NUM 3
+#define MIR 4
+#define SYS 5
 
 // "letter layers" for diacritics, symbols, maybe half mirroring
 #define LYA 6
@@ -238,6 +237,17 @@ ZMK_LAYER(base,
 )
 
 
+ZMK_LAYER(vanilla,
+//  alternative, plain layout in this case 
+&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                           &kp N6  &kp N7  &kp N8  &kp N9     &kp N0      &kp MINUS
+&trans     &kp Q     &kp W   &kp F   &kp P   &kp G                            &kp J   &kp L   &kp U   &kp CS_Y   &kp SEMI    &kp EQUAL
+&trans     &kp A     &kp R   &kp S   &kp T   &kp D                            &kp H   &kp N   &kp E   &kp I      &kp O       &kp APOS
+&trans     &kp CS_Z  &kp X   &kp C   &kp V   &kp B    &kp C_MUTE    &tog ALT  &kp H   &kp M   &kp K   &kp COMMA  &kp PERIOD  &kp SLASH
+                    &trans  &trans  &mo BASE &mo NAV  &kp SPACE     &trans    &trans   &trans  &trans  &trans,
+                        &inc_dec_kp C_VOL_UP C_VOL_DN                            &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC
+)
+
+
 ZMK_LAYER(nav-num,
 //
 &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                       &kp F7          &kp F8     &kp F9     &kp F10    &kp F11       &kp F12
@@ -279,17 +289,6 @@ ZMK_LAYER(sys,
 &trans       &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans   &tog ALT       &trans  &trans    &trans    &trans   &trans    &trans  &trans
                           &trans       &trans       &trans       &trans     &trans       &trans  &trans    &trans    &trans   &trans,
 &inc_dec_kp &trans &trans &inc_dec_kp &trans &trans
-)
-
-
-ZMK_LAYER(vanilla,
-//  alternative, plain layout in this case 
-&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                           &kp N6  &kp N7  &kp N8  &kp N9     &kp N0      &kp MINUS
-&trans     &kp Q     &kp W   &kp F   &kp P   &kp G                            &kp J   &kp L   &kp U   &kp CS_Y   &kp SEMI    &kp EQUAL
-&trans     &kp A     &kp R   &kp S   &kp T   &kp D                            &kp H   &kp N   &kp E   &kp I      &kp O       &kp APOS
-&trans     &kp CS_Z  &kp X   &kp C   &kp V   &kp B    &kp C_MUTE    &tog ALT  &kp H   &kp M   &kp K   &kp COMMA  &kp PERIOD  &kp SLASH
-                    &trans  &trans  &mo BASE &mo NAV  &kp SPACE     &trans    &trans   &trans  &trans  &trans,
-                        &inc_dec_kp C_VOL_UP C_VOL_DN                            &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC
 )
 
 
