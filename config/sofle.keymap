@@ -243,7 +243,7 @@ ZMK_LAYER(vanilla,
 &trans     &kp Q     &kp W   &kp F   &kp P   &kp G                            &kp J   &kp L   &kp U   &kp CS_Y   &kp SEMI    &kp EQUAL
 &trans     &kp A     &kp R   &kp S   &kp T   &kp D                            &kp H   &kp N   &kp E   &kp I      &kp O       &kp APOS
 &trans     &kp CS_Z  &kp X   &kp C   &kp V   &kp B    &kp C_MUTE    &tog ALT  &kp H   &kp M   &kp K   &kp COMMA  &kp PERIOD  &kp SLASH
-                    &trans  &trans  &mo BASE &mo NAV  &kp SPACE     &trans    &trans   &trans  &trans  &trans,
+                    &trans  &trans  &mo BASE &mo NAV  &kp LCTRL     &trans    &trans   &trans  &trans  &trans,
                         &inc_dec_kp C_VOL_UP C_VOL_DN                            &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC
 )
 
