@@ -28,24 +28,28 @@
 #define MIR 3
 #define SYS 4
 
-// layer ALIASES for diacritics, maybe symbols, maybe half mirroring
-#define LYA 5
-#define LYE 6
-#define LYI 7
-#define LYO 8
-#define LYU 9
-#define LYY 10
+// alternative layout - "vanilla" plain layer without letter layers
+#define ALT 5
 
-#define LYC 11
-#define LYD 12
-#define LYL 13
-#define LYN 14
-#define LYR 15
-#define LYS 16
-#define LYT 17
-#define LYZ 18
+// "letter layers" for diacritics, symbols, maybe half mirroring
+#define LYA 6
+#define LYE 7
+#define LYI 8
+#define LYO 9
+#define LYU 10
+#define LYY 11
+
+#define LYC 12
+#define LYD 13
+#define LYL 14
+#define LYN 15
+#define LYR 16
+#define LYS 17
+#define LYT 18
+#define LYZ 19
 
 // #define ALFA (LH1)
+
 
 
 // ///   EC11 Encoders   /// //
@@ -239,7 +243,7 @@ ZMK_LAYER(nav-num,
 &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                       &kp F7          &kp F8     &kp F9     &kp F10    &kp F11       &kp F12
 &trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                     &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &trans
 &trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                       &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &trans
-&trans    &kp CS_TILDE  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_EQUAL  &trans
+&trans    &kp RA(A)  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_EQUAL  &trans
                     &trans    &trans    &kp LALT   &trans     &trans     &trans  &trans         &kp KP_N0   &trans    &trans, 
 &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
 )
@@ -269,12 +273,23 @@ ZMK_LAYER(mirror,
 
 ZMK_LAYER(sys,
 //
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR                  &trans    &trans    &trans   &trans    &trans  &trans
-&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                        &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                      &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans        &trans  &trans  &trans    &trans    &trans   &trans    &trans  &trans
-                        &trans       &trans       &trans       &trans        &trans  &trans  &trans    &trans    &trans   &trans,
+&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR                      &trans    &trans    &trans   &trans    &trans  &trans
+&trans       &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                          &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
+&trans       &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                        &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
+&trans       &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans   &tog ALT       &trans  &trans    &trans    &trans   &trans    &trans  &trans
+                          &trans       &trans       &trans       &trans     &trans       &trans  &trans    &trans    &trans   &trans,
 &inc_dec_kp &trans &trans &inc_dec_kp &trans &trans
+)
+
+
+ZMK_LAYER(vanilla,
+//  alternative, plain layout in this case 
+&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                             &kp N6  &kp N7  &kp N8  &kp N9     &kp N0      &kp MINUS
+&trans     &kp Q     &kp W   &kp F   &kp P   &kp G                              &kp J   &kp L   &kp U   &kp CS_Y   &kp SEMI    &kp EQUAL
+&trans     &kp A     &kp R   &kp S   &kp T   &kp D                              &kp H   &kp N   &kp E   &kp I      &kp O       &kp APOS
+&trans     &kp CS_Z  &kp X   &kp C   &kp V   &kp B      &kp C_MUTE    &tog ALT  &kp H   &kp M   &kp K   &kp COMMA  &kp PERIOD  &kp SLASH
+                     &trans  &trans  &trans  &kp SPACE  &trans        &trans    &trans   &trans  &trans  &trans,
+                        &inc_dec_kp C_VOL_UP C_VOL_DN                            &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC
 )
 
 
