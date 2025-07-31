@@ -23,12 +23,12 @@
 #include "zmk-helpers/key-labels/sofle.h"
 
 #define BASE 0
-#define ALT 1 // alternative layout - "vanilla" plain layer without letter layers
 // the important ones:
-#define NAV 2
-#define NUM 3
-#define MIR 4
-#define SYS 5
+#define NAV 1
+#define NUM 2
+#define MIR 3
+#define SYS 4
+#define ALT 5 // alternative layout - "vanilla" plain layer without letter layers
 
 // "letter layers" for diacritics, symbols, maybe half mirroring
 #define LYA 6
@@ -241,18 +241,6 @@ ZMK_LAYER(base,
 )
 
 
-ZMK_LAYER(vanilla,
-//  alternative, plain layout in this case 
-//&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                           &kp N6  &kp N7  &kp N8  &kp N9     &kp N0      &kp MINUS
-&kp F1   &kp F2    &kp F3  &kp F4  &kp F5  &kp F6                           &kp F7   &kp F8  &kp F9  &kp F10    &kp F11     &kp F12
-&trans   &kp Q     &kp W   &kp F   &kp P   &kp G                            &kp J    &kp L   &kp U   &kp CS_Y   &kp SEMI    &kp EQUAL
-&trans   &kp A     &kp R   &kp S   &kp T   &kp D                            &kp H    &kp N   &kp E   &kp I      &kp O       &kp APOS
-&trans   &kp CS_Z  &kp X   &kp C   &kp V   &kp B    &kp C_MUTE    &tog ALT  &my_qmem &kp M   &kp K   &kp COMMA  &kp PERIOD  &kp SLASH
-                   &trans  &trans  &mo NUM &mo NAV  &kp LCTRL     &trans    &trans   &trans  &trans  &trans,
-                        &inc_dec_kp C_VOL_UP C_VOL_DN                            &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC
-)
-
-
 ZMK_LAYER(nav-num,
 //
 &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                       &kp F7          &kp F8     &kp F9     &kp F10    &kp F11       &kp F12
@@ -277,10 +265,10 @@ ZMK_LAYER(num-nav,
 
 ZMK_LAYER(mirror,
 //
-&trans  &trans    &trans   &trans   &trans    &trans                       &trans    &trans  &trans   &trans   &trans   &trans
-&trans  &kp J     &kp L    &lt LYU U  &lt LYY CS_Y  &kp CS_MINUS                &kp Q     &kp W   &kp F    &kp P    &kp G    &trans
-&trans  &kp H   &lt LYN N  &lt LYE E  &lt LYI I  &lt LYO O                 &kp A     &kp R   &kp S    &kp T    &kp D    &trans
-&trans  &my_qmem  &kp M    &kp K    &my_cose  &kp CS_DOT  &trans   &trans  &kp CS_Z  &kp X   &kp C    &kp V    &kp B    &trans
+&trans  &trans        &trans        &trans      &trans      &trans                   &trans   &trans   &trans   &trans  &trans   &trans
+&trans  &kp CS_MINUS  &lt LYY CS_Y  &lt LYU U   &kp L       &kp J                    &kp G    &kp P    &kp F    &kp W   &kp Q    &trans
+&trans  &lt LYO O     &lt LYI I     &lt LYE E   &lt LYN N   &kp H                    &kp D    &kp T    &kp S    &kp R   &kp A    &trans
+&trans  &kp CS_DOT    &my_cose      &kp K       &kp M       &my_qmem  &trans &trans  &kp B   &kp V    &kp C    &kp X   &kp CS_Z  &trans
                   &trans   &trans   &trans    &trans      &trans   &trans  &trans    &trans  &trans   &trans,
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
@@ -296,6 +284,17 @@ ZMK_LAYER(sys,
 &inc_dec_kp &trans &trans &inc_dec_kp &trans &trans
 )
 
+
+ZMK_LAYER(vanilla,
+//  alternative, plain layout in this case 
+//&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                           &kp N6  &kp N7  &kp N8  &kp N9     &kp N0      &kp MINUS
+&kp ESC  &kp F2    &kp F3  &kp F4  &kp F5  &kp F6                           &kp F7   &kp F8  &kp F9  &kp F10    &kp F11     &kp F12
+&trans   &kp Q     &kp W   &kp F   &kp P   &kp G                            &kp J    &kp L   &kp U   &kp CS_Y   &kp SEMI    &kp EQUAL
+&trans   &kp A     &kp R   &kp S   &kp T   &kp D                            &kp H    &kp N   &kp E   &kp I      &kp O       &kp APOS
+&trans   &kp CS_Z  &kp X   &kp C   &kp V   &kp B    &kp C_MUTE    &tog ALT  &my_qmem &kp M   &kp K   &kp COMMA  &kp PERIOD  &kp SLASH
+                   &trans  &trans  &mo NUM &mo NAV  &kp LCTRL     &trans    &trans   &trans  &trans  &trans,
+                        &inc_dec_kp C_VOL_UP C_VOL_DN                            &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC
+)
 
 
 // ///   EXTRA LAYERS for DIACRITICS, SYMBOLS etc.   /// //
