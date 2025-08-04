@@ -235,7 +235,7 @@ ZMK_LAYER(base,
 &htt F1 ESC    &kp F2        &kp F3     &kp F4     &kp F5     &kp F6                               &kp PSCRN  &kp HOME   &kp C_PP   &kp END       &kp F11       &kp C_AL_CALC
 &kp TAB        &kp Q         &kp W      &kp F      &kp P      &kp G                                &kp J      &lt LYL L  &lt LYU U  &lt LYY CS_Y  &kp CS_MINUS  &my_rm
 &kp LSHFT      &lt LYA A     &lt LYR R  &lt LYS S  &lt LYT T  &lt LYD D                            &kp H      &lt LYN N  &lt LYE E  &lt LYI I     &lt LYO O     &kp LCTRL
-&lt MIR SPACE  &lt LYZ CS_Z  &kp X      &lt LYC C  &kp V      &kp B    &kp C_MUTE      &kp C_MUTE  &my_qmem   &kp M      &kp K      &my_cose      &kp CS_DOT    &lt MIR RET
+&kp SPACE      &lt LYZ CS_Z  &kp X      &lt LYC C  &kp V      &kp B    &kp C_MUTE      &kp C_MUTE  &my_qmem   &kp M      &kp K      &my_cose      &kp CS_DOT    &kp RET
                              &kp LGUI   &kp LALT   &mo NUM    &mo NAV  &hht LCTRL RET  &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp LGUI,
 &inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN
 )
