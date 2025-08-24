@@ -89,6 +89,14 @@
             bindings = <&hht F1 ESC>, <&kp LC(F1)>;
         };
   };
+
+  conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
 };
 
 
@@ -226,7 +234,7 @@ ZMK_UNICODE_PAIR(uc_hi99,   N2, N0, N1, D,    N2, N0, N1, N9)     // ” / ’
 
 
 // activate MIRror layer on thumb, by pressing NAV + NUM
-ZMK_CONDITIONAL_LAYER(lyr_mir, NAV NUM, MIR)
+//ZMK_CONDITIONAL_LAYER(lyr_mir, NAV NUM, MIR)
 
 
 
