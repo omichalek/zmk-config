@@ -11,11 +11,9 @@
 // #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-// All the ZMK_* commands below utilize 'zmk-helpers' by @urob:
+// the ZMK_* commands below utilize 'zmk-helpers' by @urob:
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
-#include "zmk-helpers/helper.h"
-// positional key names for Sofle:
-#include "zmk-helpers/key-labels/sofle.h"
+#include "zmk-helpers/key-labels/sofle.h"  // positional key names for Sofle
 
 #define BASE 0
 // the important ones:
