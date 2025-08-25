@@ -218,7 +218,7 @@ ZMK_UNICODE_PAIR(uc_hi99,   N2, N0, N1, D,    N2, N0, N1, N9)     // ” / ’
 // ///   LAYERS   /// //
 
 // activate SYStem layer by pressing MIR + NAV
-//ZMK_CONDITIONAL_LAYER(lyr_sys, NAV MIR, SYS)
+ZMK_CONDITIONAL_LAYER(lyr_sys, NAV MIR, SYS)
 
 
 // activate MIRror layer on thumb, by pressing NAV + NUM
@@ -227,11 +227,11 @@ ZMK_CONDITIONAL_LAYER(lyr_mir, NAV NUM, MIR)
 
 
 ZMK_LAYER(base,
-//
-&htt F1 ESC    &kp F2        &kp F3     &kp F4     &kp F5     &kp F6                               &kp PSCRN  &kp HOME   &kp C_PP   &kp END       &kp F11       &kp C_AL_CALC
+// &htt F1 ESC
+&kp ESC        &kp F2        &kp F3     &kp F4     &kp F5     &kp F6                               &kp PSCRN  &kp HOME   &kp C_PP   &kp END       &kp F11       &kp C_AL_CALC
 &kp TAB        &kp Q         &kp W      &kp F      &kp P      &kp G                                &kp J      &lt LYL L  &lt LYU U  &lt LYY CS_Y  &kp CS_MINUS  &my_rm
 &kp LSHFT      &lt LYA A     &lt LYR R  &lt LYS S  &lt LYT T  &lt LYD D                            &kp H      &lt LYN N  &lt LYE E  &lt LYI I     &lt LYO O     &kp LCTRL
-&kp SPACE      &lt LYZ CS_Z  &kp X      &lt LYC C  &kp V      &kp B    &kp C_MUTE      &kp C_MUTE  &my_qmem   &kp M      &kp K      &my_cose      &kp CS_DOT    &kp RET
+&lt MIR SPACE  &lt LYZ CS_Z  &kp X      &lt LYC C  &kp V      &kp B    &kp C_MUTE      &kp C_MUTE  &my_qmem   &kp M      &kp K      &my_cose      &kp CS_DOT    &kp RET
                              &kp LGUI   &kp LALT   &mo NUM    &mo NAV  &hht LCTRL RET  &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp LGUI,
 &inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN
 )
@@ -273,7 +273,7 @@ ZMK_LAYER(mirror,
 ZMK_LAYER(sys,
 //
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR                      &trans    &trans    &trans   &trans    &trans  &trans
-&trans       &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                          &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
+&kp CAPS     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                          &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
 &trans       &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                        &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
 &trans       &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans   &tog ALT       &trans  &trans    &trans    &trans   &trans    &trans  &trans
                           &trans       &trans       &trans       &trans     &trans       &trans  &trans    &trans    &trans   &trans,
