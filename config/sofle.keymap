@@ -12,6 +12,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // the ZMK_* commands below utilize 'zmk-helpers' by @urob:
+#include "zmk-helpers/helper.h"
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
 #include "zmk-helpers/key-labels/sofle.h"  // positional key names for Sofle
 
