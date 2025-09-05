@@ -258,7 +258,7 @@ ZMK_LAYER(num-nav,
 
 ZMK_LAYER(mirror,
 //
-&kp F1    &trans        &trans        &trans      &trans      &trans                   &trans   &trans   &trans   &trans  &trans   &trans
+&kp F1    &trans        &trans        &trans      &trans      &trans                   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
 &kp CAPS  &kp CS_MINUS  &lt LYY CS_Y  &lt LYU U   &kp L       &kp J                    &kp G    &kp P    &kp F    &kp W   &kp Q    &trans
 &trans    &lt LYO O     &lt LYI I     &lt LYE E   &lt LYN N   &kp H                    &kp D    &kp T    &kp S    &kp R   &kp A    &trans
 &trans    &kp CS_DOT    &my_cose      &kp K       &kp M       &my_qmem  &trans &trans  &kp B   &kp V    &kp C    &kp X   &kp CS_Z  &trans
