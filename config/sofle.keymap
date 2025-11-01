@@ -18,8 +18,8 @@
 
 #define BASE 0
 // the important ones:
-#define NAV 1
-#define ALT 2 // alternative layout - "vanilla" plain layer without letter layers
+#define ALT 1 // alternative layout - "vanilla" plain layer without letter layers
+#define NAV 2
 #define NUM 3
 #define MIR 4
 #define SYS 5 // unused, incorporate into mirror?
