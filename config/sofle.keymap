@@ -477,17 +477,16 @@ ZMK_COMBO(menu, &kp K_CONTEXT_MENU, LM3 LM1, ALL, 50)
 // „ / ‚
 //ZMK_COMBO(quotation-low-99, &uc_lo99, RT0 RT1, ALL, 50)
 // " / '
-//ZMK_COMBO(quotation-std, &my_quo, RT3 RT4, ALL, 50)
+ZMK_COMBO(quotation-std, &my_quo, LB1 LM1, ALL, 50)
 
 //  ()
-//ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RM0 RM1, ALL, 50)
-//ZMK_COMBO(bracket-reg-r, &kp CS_RIGHT_PARENTHESIS, RM1 RM2, ALL, 50)
+ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RB0 RM0, ALL, 50)
+ZMK_COMBO(bracket-reg-r, &kp CS_RIGHT_PARENTHESIS, RB1 RM1, ALL, 50)
 //  []
-//ZMK_COMBO(bracket-sq-l, &kp CS_LEFT_BRACKET, RM2 RM3, ALL, 50)
-//ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RM3 RM4, ALL, 50)
-
+ZMK_COMBO(bracket-sq-l, &kp CS_LEFT_BRACKET, RB0 RT0, ALL, 50)
+ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RB1 RT1, ALL, 50)
 //  curly?
-//ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RB0 RM1, ALL, 50)
-//ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RB1 RM2, ALL, 50)
+ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RM0 RT0, ALL, 50)
+ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RM1 RT1, ALL, 50)
 
 
