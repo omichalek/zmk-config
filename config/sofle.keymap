@@ -475,9 +475,10 @@ ZMK_COMBO(menu, &kp K_CONTEXT_MENU, LM3 LM1, ALL, 50)
 
 // quotation marks
 // „ / ‚
-//ZMK_COMBO(quotation-low-99, &uc_lo99, RT0 RT1, ALL, 50)
+ZMK_COMBO(quotation-low-99, &uc_lo99, LB1 LM1, ALL, 50)
 // " / '
-ZMK_COMBO(quotation-std, &my_quo, LB1 LM1, ALL, 50)
+ZMK_COMBO(quotation-std0, &my_quo, LB0 LM0, ALL, 50)
+ZMK_COMBO(quotation-stdR, &my_quo, RB5 RM5, ALL, 50)
 
 //  ()
 ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RB0 RM0, ALL, 50)
