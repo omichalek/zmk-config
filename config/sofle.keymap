@@ -12,16 +12,18 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // the ZMK_* commands below utilize 'zmk-helpers' by @urob:
+#include "zmk-helpers/helper.h"
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
 #include "zmk-helpers/key-labels/sofle.h"  // positional key names for Sofle
 
 #define BASE 0
 // the important ones:
-#define NAV 1
-#define NUM 2
-#define MIR 3
-#define SYS 4
-#define ALT 5 // alternative layout - "vanilla" plain layer without letter layers
+#define ALT 1 // alternative layout - "vanilla" plain layer without letter layers
+#define NAV 2
+#define NUM 3
+#define MIR 4
+#define SYS 5 // unused, incorporate into mirror?
+
 
 // "letter layers" for diacritics, symbols, maybe half mirroring
 #define LYA 6
@@ -60,6 +62,16 @@
             hold-while-undecided;
             #binding-cells = <2>;
             tapping-term-ms = <100>;      // 150
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";    // hh
+            bindings = <&kp>, <&kp>;      // HOLD TAP
+        };
+
+        hhtr: hold_tap_hold-pref_right {
+            compatible = "zmk,behavior-hold-tap";
+            hold-while-undecided;
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;      // 150
             quick-tap-ms = <0>;
             flavor = "hold-preferred";    // hh
             bindings = <&kp>, <&kp>;      // HOLD TAP
@@ -229,16 +241,28 @@ ZMK_LAYER(base,
 &kp TAB        &kp Q         &kp W      &kp F      &kp P      &kp G                                &kp J      &lt LYL L  &lt LYU U  &lt LYY CS_Y  &kp CS_MINUS  &my_rm
 &kp LSHFT      &lt LYA A     &lt LYR R  &lt LYS S  &lt LYT T  &lt LYD D                            &kp H      &lt LYN N  &lt LYE E  &lt LYI I     &lt LYO O     &kp LCTRL
 &kp SPACE      &lt LYZ CS_Z  &kp X      &lt LYC C  &kp V      &kp B    &kp C_MUTE      &kp C_MUTE  &my_qmem   &kp M      &kp K      &my_cose      &kp CS_DOT    &kp RET
-                             &kp LGUI   &kp LALT   &mo NUM    &mo NAV  &hht LCTRL RET  &hht RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp LGUI,
+                             &kp LGUI   &kp LALT   &mo NUM    &mo NAV  &hht LCTRL RET  &hhtr RSHFT SPACE &mo NUM   &mo NAV   &kp RALT   &kp LGUI,
 &inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN
+)
+
+
+ZMK_LAYER(vanilla,
+//  alternative, plain layout in this case 
+//&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                           &kp N6  &kp N7  &kp N8  &kp N9     &kp N0      &kp MINUS
+&kp ESC  &kp F2    &kp F3  &kp F4  &kp F5  &kp F6                           &kp F7   &kp F8  &kp F9  &kp F10    &kp F11     &kp F12
+&trans   &kp Q     &kp W   &kp F   &kp P   &kp G                            &kp J    &kp L   &kp U   &kp CS_Y   &kp SEMI    &kp EQUAL
+&trans   &kp A     &kp R   &kp S   &kp T   &kp D                            &kp H    &kp N   &kp E   &kp I      &kp O       &kp APOS
+&trans   &kp CS_Z  &kp X   &kp C   &kp V   &kp B    &kp C_MUTE    &tog ALT  &my_qmem &kp M   &kp K   &kp COMMA  &kp PERIOD  &kp SLASH
+                   &trans  &trans  &mo NUM &mo NAV  &kp LCTRL     &trans    &trans   &trans  &trans  &trans,
+                        &inc_dec_kp C_VOL_UP C_VOL_DN                            &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC
 )
 
 
 ZMK_LAYER(nav-num,
 //
 &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12                       &kp F7          &kp F8     &kp F9     &kp F10    &kp F11       &kp F12
-&trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                     &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &trans
-&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                       &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &trans
+&trans    &kp ESC   &kp BSPC  &kp UP    &kp DEL   &kp PG_UP                     &kp KP_DIVIDE   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &trans
+&trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT &kp END                       &kp KP_MULTIPLY &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &trans
 &trans    &kp RA(A)  &kp TAB   &kp SPACE &kp ENTER &kp PG_DN    &trans   &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp CS_EQUAL  &trans
                     &trans    &trans    &trans    &trans        &trans   &trans  &trans         &kp KP_N0   &trans    &trans, 
 &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
@@ -248,8 +272,8 @@ ZMK_LAYER(nav-num,
 ZMK_LAYER(num-nav,
 //
 &kp GRAVE  &kp N1          &kp N2     &kp N3     &kp N4     &kp N5                             &kp N6     &kp N7    &kp N8    &kp N9    &kp N0     &kp CS_ACUTE
-&trans     &kp KP_MULTIPLY &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS                       &kp ESC    &kp BSPC  &kp UP    &kp DEL   &kp PG_UP  &trans
-&trans     &kp KP_DIVIDE   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp CS_PLUS                        &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT &kp END    &trans
+&trans     &kp KP_DIVIDE   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS                       &kp ESC    &kp BSPC  &kp UP    &kp DEL   &kp PG_UP  &trans
+&trans     &kp KP_MULTIPLY &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp CS_PLUS                        &kp HOME   &kp LEFT  &kp DOWN  &kp RIGHT &kp END    &trans
 &trans     &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &my_doco    &kp C_BKLT_TOG &trans  &kp NUBS   &kp ENTER &kp SPACE &kp TAB   &kp PG_DN  &trans
                            &trans     &trans     &trans     &trans       &trans         &trans  &trans    &trans    &trans    &trans,
 &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC &inc_dec_kp PG_UP PG_DN
@@ -258,10 +282,10 @@ ZMK_LAYER(num-nav,
 
 ZMK_LAYER(mirror,
 //
-&kp F1    &trans        &trans        &trans      &trans      &trans                   &trans   &trans   &trans   &trans  &trans   &trans
+&kp F1    &trans        &trans        &trans      &trans      &trans                   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
 &kp CAPS  &kp CS_MINUS  &lt LYY CS_Y  &lt LYU U   &kp L       &kp J                    &kp G    &kp P    &kp F    &kp W   &kp Q    &trans
 &trans    &lt LYO O     &lt LYI I     &lt LYE E   &lt LYN N   &kp H                    &kp D    &kp T    &kp S    &kp R   &kp A    &trans
-&trans    &kp CS_DOT    &my_cose      &kp K       &kp M       &my_qmem  &trans &trans  &kp B   &kp V    &kp C    &kp X   &kp CS_Z  &trans
+&trans    &kp CS_DOT    &my_cose      &kp K       &kp M       &my_qmem &tog ALT   &trans &kp B   &kp V    &kp C    &kp X   &kp CS_Z  &trans
                   &trans   &trans   &trans    &trans      &trans   &trans  &trans    &trans  &trans   &trans,
 &inc_dec_kp DOWN UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
@@ -277,17 +301,6 @@ ZMK_LAYER(sys,
 &inc_dec_kp &trans &trans &inc_dec_kp &trans &trans
 )
 
-
-ZMK_LAYER(vanilla,
-//  alternative, plain layout in this case 
-//&kp GRAVE  &kp N1    &kp N2  &kp N3  &kp N4  &kp N5                           &kp N6  &kp N7  &kp N8  &kp N9     &kp N0      &kp MINUS
-&kp ESC  &kp F2    &kp F3  &kp F4  &kp F5  &kp F6                           &kp F7   &kp F8  &kp F9  &kp F10    &kp F11     &kp F12
-&trans   &kp Q     &kp W   &kp F   &kp P   &kp G                            &kp J    &kp L   &kp U   &kp CS_Y   &kp SEMI    &kp EQUAL
-&trans   &kp A     &kp R   &kp S   &kp T   &kp D                            &kp H    &kp N   &kp E   &kp I      &kp O       &kp APOS
-&trans   &kp CS_Z  &kp X   &kp C   &kp V   &kp B    &kp C_MUTE    &tog ALT  &my_qmem &kp M   &kp K   &kp COMMA  &kp PERIOD  &kp SLASH
-                   &trans  &trans  &mo NUM &mo NAV  &kp LCTRL     &trans    &trans   &trans  &trans  &trans,
-                        &inc_dec_kp C_VOL_UP C_VOL_DN                            &inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC
-)
 
 
 // ///   EXTRA LAYERS for DIACRITICS, SYMBOLS etc.   /// //
@@ -461,20 +474,22 @@ ZMK_COMBO(menu, &kp K_CONTEXT_MENU, LM3 LM1, ALL, 50)
 
 
 // quotation marks
-// „ / ‚
-ZMK_COMBO(quotation-low-99, &uc_lo99, RT0 RT1, ALL, 50)
-// " / '
-ZMK_COMBO(quotation-std, &my_quo, RT3 RT4, ALL, 50)
+//  „ ‚
+// ZMK_COMBO(quotation-low-99, &uc_lo99, LB1 LM1, ALL, 50)
+//  ` grave
+ZMK_COMBO(grave, &kp CS_GRAVE, LB1 LM1, ALL, 50)
+//  " '
+ZMK_COMBO(quotation-std0, &my_quo, LB0 LM0, ALL, 50)
+ZMK_COMBO(quotation-stdR, &my_quo, RB5 RM5, ALL, 50)
 
 //  ()
-ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RM0 RM1, ALL, 50)
-ZMK_COMBO(bracket-reg-r, &kp CS_RIGHT_PARENTHESIS, RM1 RM2, ALL, 50)
+ZMK_COMBO(bracket-reg-l, &kp CS_LEFT_PARENTHESIS, RB0 RM0, ALL, 50)
+ZMK_COMBO(bracket-reg-r, &kp CS_RIGHT_PARENTHESIS, RB1 RM1, ALL, 50)
 //  []
-ZMK_COMBO(bracket-sq-l, &kp CS_LEFT_BRACKET, RM2 RM3, ALL, 50)
-ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RM3 RM4, ALL, 50)
-
+ZMK_COMBO(bracket-sq-l, &kp CS_LEFT_BRACKET, RB0 RT0, ALL, 50)
+ZMK_COMBO(bracket-sq-r, &kp CS_RIGHT_BRACKET, RB1 RT1, ALL, 50)
 //  curly?
-ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RB0 RM1, ALL, 50)
-ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RB1 RM2, ALL, 50)
+ZMK_COMBO(bracket-curly-l, &kp CS_LBRC, RM0 RT0, ALL, 50)
+ZMK_COMBO(bracket-curly-r, &kp CS_RBRC, RM1 RT1, ALL, 50)
 
 
