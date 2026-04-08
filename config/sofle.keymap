@@ -67,7 +67,7 @@
 	tapping-term-ms = <750>;
 };
 
-{
+/ {
 behaviors {
 	hht: hold_tap_hold-pref {
 		compatible = "zmk,behavior-hold-tap";
