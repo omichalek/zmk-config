@@ -64,7 +64,7 @@
 
 &lt {
 	hold-trigger-key-positions = <THUMBS>;
-	tapping-term-ms = <750>;
+//	tapping-term-ms = <750>;
 };
 
 / {
