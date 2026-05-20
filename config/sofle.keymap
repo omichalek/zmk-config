@@ -107,12 +107,19 @@ behaviors {
 	};
 
 	//  CUSTOM F-KEYS using TAP DANCE  //  UNUSED    
-		my_f1: tap_dance_f1 {
+	my_f1: tap_dance_f1 {
 		compatible = "zmk,behavior-tap-dance";
 		#binding-cells = <0>;
 		tapping-term-ms = <155>;
 		bindings = <&hht F1 ESC>, <&kp LC(F1)>;
 	};
+
+	encoder_scroll: encoder_scroll {
+		compatible = "zmk,behavior-sensor-rotate";
+		#sensor-binding-cells = <0>;
+		bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+	};
+	
   };
 };
 
@@ -264,7 +271,7 @@ ZMK_LAYER(base,
 &kp LSH       &lt LYA A     &lt LYR R  &lt LYS S  &lt LYT T  &lt LYD D                             &kp H      &lt LYN N  &lt LYE E  &lt LYI I     &lt LYO O     &kp RCT
 &hht LALT SPC &lt LYZ CS_Z  &kp X      &lt LYC C  &kp V      &kp B    &kp C_MUTE      &kp C_MUTE   &my_qmem   &kp M      &kp K      &my_cose      &kp CS_DOT   &hht RALT RET
                             &kp LGUI   &kp RET    &mo NUM    &mo NAV  &hht LCT SPC    &hht RSH RET &mo NUM    &mo NAV    &kp SPC    &kp LGUI,
-&inc_dec_kp &msc SCRL_DOWN &msc SCRL_UP &inc_dec_kp C_VOL_UP C_VOL_DN
+&encoder_scroll		&inc_dec_kp C_VOL_UP C_VOL_DN
 )
 
 
