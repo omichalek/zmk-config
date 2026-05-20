@@ -24,6 +24,7 @@
 #define MIR 4
 #define SYS 5 // unused, incorporate into mirror?
 
+#define ALL 1 2 3 4 5
 
 // "letter layers" for diacritics, symbols, maybe half mirroring
 #define LYA 6
