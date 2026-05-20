@@ -11,6 +11,8 @@
 // #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#include <dt-bindings/zmk/pointing.h>
+
 // the ZMK_* commands below utilize 'zmk-helpers' by @urob:
 #include "zmk-helpers/helper.h"
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
@@ -262,7 +264,7 @@ ZMK_LAYER(base,
 &kp LSH       &lt LYA A     &lt LYR R  &lt LYS S  &lt LYT T  &lt LYD D                             &kp H      &lt LYN N  &lt LYE E  &lt LYI I     &lt LYO O     &kp RCT
 &hht LALT SPC &lt LYZ CS_Z  &kp X      &lt LYC C  &kp V      &kp B    &kp C_MUTE      &kp C_MUTE   &my_qmem   &kp M      &kp K      &my_cose      &kp CS_DOT   &hht RALT RET
                             &kp LGUI   &kp RET    &mo NUM    &mo NAV  &hht LCT SPC    &hht RSH RET &mo NUM    &mo NAV    &kp SPC    &kp LGUI,
-&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN
+&inc_dec_kp &msc SCRL_DOWN &msc SCRL_UP &inc_dec_kp C_VOL_UP C_VOL_DN
 )
 
 
