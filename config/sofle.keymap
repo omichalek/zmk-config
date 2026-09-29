@@ -71,7 +71,6 @@ ZMK_CONDITIONAL_LAYER(lyr_mir, NAV NUM, MIR)
 // KEYS_L KEYS_R
 // THUMBS THUMBS_L THUMBS_R
 
-
 //&lt {
 //	hold-trigger-key-positions = <THUMBS>;
 //};
@@ -89,8 +88,15 @@ behaviors {
 		bindings = <&mo>, <&kp>;
 		display-name = "Letter-Layer";
 	};
-	
-	
+
+	lt: layer_tap {
+		compatible = "zmk,behavior-hold-tap";
+		#binding-cells = <2>;
+		flavor = "hold-preferred";   //  changed from the default tap-preferred
+		tapping-term-ms = <200>;
+		bindings = <&mo>, <&kp>;
+		display-name = "Layer-Tap";
+        };
 	
 	
 	ht: hold_tap-default {
