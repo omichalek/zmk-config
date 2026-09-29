@@ -92,11 +92,12 @@ behaviors {
 	lt: layer_tap {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
+		hold-while-undecided;        //
 		flavor = "hold-preferred";   //  changed from the default tap-preferred
 		tapping-term-ms = <200>;
 		bindings = <&mo>, <&kp>;
 		display-name = "Layer-Tap";
-        };
+	};
 	
 	
 	ht: hold_tap-default {
