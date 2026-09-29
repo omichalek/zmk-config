@@ -80,7 +80,7 @@ ZMK_CONDITIONAL_LAYER(lyr_mir, NAV NUM, MIR)
 behaviors {
 
 	//////  LETTER LAYERS  //////  //////  //////
-	ll: letter_layer {
+	ll: layer_tap {
 		ompatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 		flavor = "tap-preferred";
