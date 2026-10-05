@@ -302,7 +302,7 @@ ZMK_LAYER(base,
 &kp TAB       &kp Q         &kp W      &kp F      &kp P      &kp G                                 &kp J      &ll LYL L  &ll LYU U  &ll LYY CS_Y  &kp CS_MINUS  &my_rm
 &kp LSH       &ll LYA A     &ll LYR R  &ll LYS S  &ll LYT T  &ll LYD D                             &kp H      &ll LYN N  &ll LYE E  &ll LYI I     &ll LYO O     &kp RCT
 &ht LALT SPC  &ll LYZ CS_Z  &ll LYX X  &ll LYC C  &kp V      &kp B    &kp C_MUTE      &kp C_MUTE   &my_qmem   &kp M      &kp K      &my_cose      &kp CS_DOT   &hht RALT RET
-                            &kp LGUI   &kp SPC    &lt NUM ESC &lt NAV SPC  &hht LCT RET    &hht RSH SPC &mo NUM    &mo NAV    &kp SPC    &kp LGUI,
+                            &kp LGUI   &kp SPC    &mo NUM    &mo NAV  &hht LCT RET    &hht RSH SPC &mo NUM    &mo NAV    &kp SPC    &kp LGUI,
 &encoder_scroll		&inc_dec_kp C_VOL_UP C_VOL_DN
 )
 
@@ -502,7 +502,7 @@ ___    ___    ___    ___    ___    ___                       ___    ___    ___  
 ___    ___    ___    ___    ___    ___                       ___    ___    ___    ___    ___    ___   
 ___    ___    ___    ___    ___    ___                       ___    ___    ___    ___    ___    ___   
 ___    ___    ___    ___    ___    ___    ___         ___    ___    ___    ___    ___    ___    ___   
-              ___    ___    ___  &kp RA(X) ___        ___ &kp RA(X) ___    ___    ___   ,
+            ___  ___  &mkp MB1  &mkp MB3  &mkp MB2      ___ &kp RA(X) ___    ___    ___   ,
 &inc_dec_kp ___    ___       &inc_dec_kp ___    ___   
 )
 
